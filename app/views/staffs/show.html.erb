@@ -1,0 +1,39 @@
+<header>
+  <h1 class="h2">Staff </h1>
+</header>
+<section class="search-results">
+  <header>
+    <h1 class="h3"><%= @staff.email %></h1>
+  </header>
+  <ol class="list-group">
+        <li class="list-group-item clearfix">
+          <h3 class="pull-right">
+            <small class="text-uppercase">Joined</small>
+            <%= @staff.created_at.to_date %>
+          </h3>
+          <h2 class="h3">
+            <%= @staff.first_name %> <%= @staff.last_name %>
+            <small><%= @staff.title %></small>
+          </h2>
+          <h4><%= @staff.email %></h4>
+        </li>
+  </ol>
+</section>
+
+<div class="ui segment">
+  <h2 class="ui left floated header">Kudos for <%= @staff.first_name %> <%= @staff.last_name %></h2>
+
+  <div class="ui clearing divider"></div>
+  <p>
+  <table class="ui celled padded table">
+    <%= render @staff.kudos %>
+  </table>
+  </p>
+</div>
+
+<div class="ui segment">
+  <h2 class="ui left floated header">Add a Kudo</h2>
+
+  <div class="ui clearing divider"></div>
+  <p><%= render 'kudos/form' %></p>
+</div>
