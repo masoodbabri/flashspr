@@ -1,9 +1,5 @@
 <%= form_for([@staff, @staff.kudos.build]) do |f| %>
     <p>
-      <%= f.label :Sender %><br>
-      <%= f.text_field :sender %>
-    </p>
-    <p>
       <%= f.label :Message %><br>
       <%= f.text_area :message %>
     </p>

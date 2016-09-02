@@ -1,16 +1,17 @@
-<tr>
-  <td>
-    <strong>Sender:</strong>
+<li class="list-group-item clearfix">
+  <h3 class="pull-right">
+    <%= link_to 'Destroy Kudo', [kudo.staff, kudo], class: 'btn btn-primary btn-sm',
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+  </h3>
+  <h2 class="h3">
+    <small class="text-uppercase">Sender:</small>
     <%= kudo.sender %>
-  </td>
+  </h2>
 
-  <td>
-    <strong>Message:</strong>
-    <%= kudo.message %>
-  </td>
-  <td>
-    <%= link_to 'Destroy Kudo', [kudo.staff, kudo], class: 'red ui button',
-                method: :delete,
-                data: { confirm: 'Are you sure?' } %>
-  </td>
-</tr>
+  <h2 class="h3">
+    <small class="text-uppercase">Message:</small>
+    <small><%= kudo.message %></small>
+  </h2>
+
+</li>

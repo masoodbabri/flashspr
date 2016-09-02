@@ -35,9 +35,10 @@
           {{ staff.first_name }} {{ staff.last_name }}
           <small>{{ staff.title }}</small>
         </h2>
-        <h4>{{ staff.email }} {{ staff.id }}</h4>
+        <h4>{{ staff.email }}</h4>
 
-        <h5 class="pull-right"><a class="btn btn-primary btn-sm" ng-href="staffs/{{staff.id}}">Show</a></h5>
+        <h5 class="pull-right"><a class="btn btn-primary btn-sm" ng-href="staffs/{{staff.id}}">Details</a></h5>
+        <h5 class="pull-right"><a class="btn btn-primary btn-sm" ng-href="staffs/{{staff.id}}/sndkudo">Send Kudo</a></h5>
 
 
       </li>

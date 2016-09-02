@@ -1,5 +1,5 @@
 <header>
-  <h1 class="h2">Staff Details</h1>
+  <h1 class="h2">Send a Kudo</h1>
 </header>
 <section class="search-results">
   <header>
@@ -20,13 +20,10 @@
   </ol>
 </section>
 
+
 <div class="ui segment">
-  <h2 class="ui left floated header">Kudos for <%= @staff.first_name %> <%= @staff.last_name %></h2>
+  <h2 class="ui left floated header">Send a Kudo to <%= @staff.first_name %> <%= @staff.last_name %></h2>
 
   <div class="ui clearing divider"></div>
-  <p>
-  <table class="ui celled padded table">
-    <%= render @staff.kudos %>
-  </table>
-  </p>
+  <p><%= render 'kudos/form' %></p>
 </div>
