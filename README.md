@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Download postgrest enterprise dmg, and install first. Then move to the postgres service
+Set up postgresql on mac:  https://launchschool.com/blog/how-to-install-postgresql-on-a-mac
+Set up nodejs npm on mac:  https://coolestguidesontheplanet.com/installing-node-js-on-osx-10-10-yosemite/
+Setup up Ruby and Rails (Rails 5.0.0.1 ruby 2.3.1p112)
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+createuser --createdb --login -P flashSPR -U postgres
+bundle install
+vi config/datbase.yml
+bundle exec rails generate devise:install
+bundle exec rails generate devise user
+bundle exec rake db:create
+bundle exec rake db:migrate
+bundle exec rake -T bower
+bundle exec rake bower:install
+bundle exec rake db:seed
