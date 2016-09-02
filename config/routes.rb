@@ -3,8 +3,11 @@ Rails.application.routes.draw do
   devise_for :users
   root 'dashboard#index'
 
-  resources :staffs  do
+  resources :staffs do
     resources :kudos
+    member do
+      get 'sndkudo'
+    end
   end
 
   get "angular_test", to: "angular_test#index"

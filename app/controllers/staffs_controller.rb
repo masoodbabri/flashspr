@@ -2,9 +2,6 @@ class StaffsController < ApplicationController
   PAGE_SIZE = 10
 
   def index
-
-    # existing index method
-
     @page = (params[:page] || 0).to_i
     if params[:keywords].present?
       @keywords = params[:keywords]
@@ -24,6 +21,10 @@ class StaffsController < ApplicationController
   end
 
   def show
+    @staff = Staff.find(params[:id])
+  end
+
+  def sndkudo
     @staff = Staff.find(params[:id])
   end
 

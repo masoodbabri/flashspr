@@ -1,23 +1,19 @@
 <header>
   <h1>FLASH Staff Performance and Recognition</h1>
-  <h2>-- <%= current_user.email %> --</h2>
 </header>
 <section>
-  <p>Rails Version:  <%= Rails.version %> - More to Come! <%= @staff.id %></p>
 
 
-  <div class="ui segment">
-  <h2 class="ui left floated header">Kudos for <%= @staff.first_name %> <%= @staff.last_name %></h2>
-
-  <div class="ui clearing divider"></div>
-  <p>
-  <table class="ui celled padded table">
+  <h2><%= @staff.first_name %> <%= @staff.last_name %>'s Kudos</h2>
+  <ol class="list-group">
     <%= render @staff.kudos %>
-  </table>
-  </p>
-  </div>
+  </ol>
 
   <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "btn btn-primary btn-sm" %>
   <%= link_to 'Show', staff_path(@staff), class: "btn btn-primary btn-sm" %>
   <%= link_to "Send Kudos", staffs_path, class: "btn btn-primary btn-sm" %>
 </section>
+
+<p></p>
+<p>Rails Version:  <%= Rails.version %> - More to Come! <%= @staff.id %></p>
+<p><%= current_user.email %></p>
