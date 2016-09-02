@@ -20,5 +20,10 @@ Download postgrest enterprise dmg, and install first. Then move to the postgres 
 * bundle exec rake db:migrate
 * sudo npm install -g bower
 * bundle exec rake -T bower
-* bundle exec rake bower:install
+* bundle exec rake bower:install - complained about metadata, but worked
 * bundle exec rake db:seed
+
+## Running the application locally
+* rails server
+
+
