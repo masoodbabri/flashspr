@@ -1,0 +1,16 @@
+<tr>
+  <td>
+    <strong>Sender:</strong>
+    <%= kudo.sender %>
+  </td>
+
+  <td>
+    <strong>Message:</strong>
+    <%= kudo.message %>
+  </td>
+  <td>
+    <%= link_to 'Destroy Kudo', [kudo.staff, kudo], class: 'red ui button',
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
+  </td>
+</tr>

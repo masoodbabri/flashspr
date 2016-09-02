@@ -1,0 +1,48 @@
+<article ng-app="staffs" ng-controller="StaffSearchController">
+  <header>
+    <h1 class="h2">Staff Search</h1>
+  </header>
+  <section class="search-form">
+    <form>
+      <label for="search.keywords" class="sr-only">Keywords</label>
+      <input type="text"
+             name="keywords"
+             class="form-control input-lg"
+             placeholder="First Name, Last Name, or Email Address"
+             ng-change="search(keywords)"
+             ng-model="keywords">
+    </form>
+  </section>
+  <aside class="sr-only loading-progress">
+    <span ng-if="loading" class="loading">Loading</span>
+    <span ng-if="!loading" class="not-loading">Done Loading</span>
+  </aside>
+  <section class="search-results" ng-if="staffs.length > 0">
+    <header>
+      <h1 class="h3">Results</h1>
+    </header>
+    <%= render partial: "pager",
+               locals: { keywords: @keywords, page: @page } %>
+
+    <ol class="list-group">
+      <li class="list-group-item clearfix"
+          ng-repeat="staff in staffs">
+        <h3 class="pull-right">
+          <small class="text-uppercase">Joined</small>
+          {{ staff.created_at | date }}
+        </h3>
+        <h2 class="h3">
+          {{ staff.first_name }} {{ staff.last_name }}
+          <small>{{ staff.title }}</small>
+        </h2>
+        <h4>{{ staff.email }} {{ staff.id }}</h4>
+
+        <h5 class="pull-right"><a class="btn btn-primary btn-sm" ng-href="staffs/{{staff.id}}">Show</a></h5>
+
+
+      </li>
+    </ol>
+    <%= render partial: "pager",
+               locals: { keywords: @keywords, page: @page } %>
+  </section>
+</article>
