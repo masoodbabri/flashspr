@@ -1,4 +1,6 @@
 class StaffsController < ApplicationController
+  require 'rest-client'
+
   PAGE_SIZE = 10
 
   def index
@@ -23,6 +25,7 @@ class StaffsController < ApplicationController
   def show
     @staff = Staff.find(params[:id])
   end
+
 
   def sndkudo
     @staff = Staff.find(params[:id])

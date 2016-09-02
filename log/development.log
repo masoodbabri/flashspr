@@ -22399,3 +22399,1369 @@ Processing by StaffsController#index as JSON
 Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.9ms)
 
 
+Started GET "/" for 127.0.0.1 at 2016-09-02 10:03:21 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (6.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.8ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "an@innotac.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.5ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 6002]]
+  Rendered collection of kudos/_kudo.html.erb [2 times] (7.7ms)
+  Rendered dashboard/index.html.erb within layouts/application (51.7ms)
+Completed 200 OK in 424ms (Views: 361.0ms | ActiveRecord: 20.1ms)
+
+
+Started GET "/staffs/6002" for 127.0.0.1 at 2016-09-02 10:03:26 -0400
+Processing by StaffsController#show as HTML
+  Parameters: {"id"=>"6002"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.6ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6002], ["LIMIT", 1]]
+  Rendering staffs/show.html.erb within layouts/application
+  [1m[36mKudo Load (0.4ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 6002]]
+  Rendered collection of kudos/_kudo.html.erb [2 times] (0.8ms)
+  Rendered staffs/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 71ms (Views: 63.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-09-02 10:03:30 -0400
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/_pager.html.erb (0.3ms)
+  Rendered staffs/_pager.html.erb (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 50ms (Views: 46.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/staffs.json?keywords=dar&page=0" for 127.0.0.1 at 2016-09-02 10:03:34 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"dar", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.9ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'dar%' OR lower(last_name) like 'dar%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 11ms (Views: 4.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/staffs.json?keywords=Dav&page=0" for 127.0.0.1 at 2016-09-02 10:03:35 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"Dav", "page"=>"0"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (1.6ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'dav%' OR lower(last_name) like 'dav%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 7ms (Views: 2.3ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/staffs.json?keywords=Dav&page=0" for 127.0.0.1 at 2016-09-02 10:03:36 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"Dav", "page"=>"0"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (1.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'dav%' OR lower(last_name) like 'dav%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 8ms (Views: 2.3ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/staffs.json?keywords=Davi&page=0" for 127.0.0.1 at 2016-09-02 10:03:37 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"Davi", "page"=>"0"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (1.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'davi%' OR lower(last_name) like 'davi%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 6ms (Views: 2.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/staffs.json?keywords=Dav&page=0" for 127.0.0.1 at 2016-09-02 10:03:37 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"Dav", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (1.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'dav%' OR lower(last_name) like 'dav%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 6ms (Views: 2.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/staffs.json?keywords=Dav&page=0" for 127.0.0.1 at 2016-09-02 10:03:46 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"Dav", "page"=>"0"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.7ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'dav%' OR lower(last_name) like 'dav%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 6ms (Views: 2.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/staffs.json?keywords=Davi&page=0" for 127.0.0.1 at 2016-09-02 10:03:46 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"Davi", "page"=>"0"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'davi%' OR lower(last_name) like 'davi%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/staffs.json?keywords=David&page=0" for 127.0.0.1 at 2016-09-02 10:03:46 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"David", "page"=>"0"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'david%' OR lower(last_name) like 'david%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/staffs/6003" for 127.0.0.1 at 2016-09-02 10:04:42 -0400
+Processing by StaffsController#show as HTML
+  Parameters: {"id"=>"6003"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  Rendering staffs/show.html.erb within layouts/application
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 6003]]
+  Rendered collection of kudos/_kudo.html.erb [3 times] (1.2ms)
+  Rendered staffs/show.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 57ms (Views: 53.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-02 10:05:35 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "an@innotac.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.4ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 6002]]
+  Rendered collection of kudos/_kudo.html.erb [2 times] (1.6ms)
+  Rendered dashboard/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 54ms (Views: 48.3ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-09-02 10:05:41 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"rKoSPUlFaXm8unbB+fGhwo5nJfxIRZVlCMEl4eEYWAe5Pg8EvTMN2nxAwf3dlNuWSpDmTDGg8NhLnTRorajbkQ=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 502ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-02 10:05:41 -0400
+Processing by DashboardController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-09-02 10:05:41 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 50ms (Views: 47.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-09-02 10:08:44 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qb8HiH8fr0dkMPw02Fou+mhuReG47JTI4kpk9YDv+Z+oxV9MPaxKJDSP+s/e2FYm526HE2BTZt2taz6Bns9rKA==", "user"=>{"email"=>"an@innotac.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "an@innotac.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", 2016-09-02 14:08:44 UTC], ["last_sign_in_at", 2016-09-01 22:15:44 UTC], ["sign_in_count", 9], ["updated_at", 2016-09-02 14:08:44 UTC], ["id", 1]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 165ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-02 10:08:44 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "an@innotac.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 6002]]
+  Rendered collection of kudos/_kudo.html.erb [2 times] (0.9ms)
+  Rendered dashboard/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 51ms (Views: 46.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/staffs/6002" for 127.0.0.1 at 2016-09-02 10:08:47 -0400
+Processing by StaffsController#show as HTML
+  Parameters: {"id"=>"6002"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6002], ["LIMIT", 1]]
+  Rendering staffs/show.html.erb within layouts/application
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 6002]]
+  Rendered collection of kudos/_kudo.html.erb [2 times] (0.7ms)
+  Rendered staffs/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 38ms (Views: 34.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-02 10:08:50 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "an@innotac.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.4ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 6002]]
+  Rendered collection of kudos/_kudo.html.erb [2 times] (0.8ms)
+  Rendered dashboard/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 39ms (Views: 34.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-09-02 10:08:53 -0400
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/_pager.html.erb (0.3ms)
+  Rendered staffs/_pager.html.erb (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 39ms (Views: 35.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/staffs/6002" for 127.0.0.1 at 2016-09-02 10:11:48 -0400
+Processing by StaffsController#show as HTML
+  Parameters: {"id"=>"6002"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6002], ["LIMIT", 1]]
+  Rendering staffs/show.html.erb within layouts/application
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 6002]]
+  Rendered collection of kudos/_kudo.html.erb [2 times] (0.9ms)
+  Rendered staffs/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 39ms (Views: 35.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-02 10:11:49 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "an@innotac.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.4ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 6002]]
+  Rendered collection of kudos/_kudo.html.erb [2 times] (1.1ms)
+  Rendered dashboard/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 38ms (Views: 34.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-09-02 10:11:51 -0400
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/_pager.html.erb (0.2ms)
+  Rendered staffs/_pager.html.erb (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 33ms (Views: 29.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/staffs/6002" for 127.0.0.1 at 2016-09-02 10:12:40 -0400
+Processing by StaffsController#show as HTML
+  Parameters: {"id"=>"6002"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6002], ["LIMIT", 1]]
+  Rendering staffs/show.html.erb within layouts/application
+  [1m[36mKudo Load (0.5ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 6002]]
+  Rendered collection of kudos/_kudo.html.erb [2 times] (0.8ms)
+  Rendered staffs/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 46ms (Views: 41.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-02 10:12:43 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "an@innotac.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.4ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 6002]]
+  Rendered collection of kudos/_kudo.html.erb [2 times] (0.8ms)
+  Rendered dashboard/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 44ms (Views: 39.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-09-02 10:12:47 -0400
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/_pager.html.erb (0.2ms)
+  Rendered staffs/_pager.html.erb (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 40ms (Views: 37.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/staffs.json?keywords=Dav&page=0" for 127.0.0.1 at 2016-09-02 10:12:53 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"Dav", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'dav%' OR lower(last_name) like 'dav%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/staffs.json?keywords=Davi&page=0" for 127.0.0.1 at 2016-09-02 10:12:53 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"Davi", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'davi%' OR lower(last_name) like 'davi%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/staffs.json?keywords=David&page=0" for 127.0.0.1 at 2016-09-02 10:12:55 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"David", "page"=>"0"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'david%' OR lower(last_name) like 'david%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/staffs/6003" for 127.0.0.1 at 2016-09-02 10:13:45 -0400
+Processing by StaffsController#show as HTML
+  Parameters: {"id"=>"6003"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  Rendering staffs/show.html.erb within layouts/application
+  [1m[36mKudo Load (0.5ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 6003]]
+  Rendered collection of kudos/_kudo.html.erb [3 times] (1.2ms)
+  Rendered staffs/show.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 41ms (Views: 36.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-02 10:14:07 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "an@innotac.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 6002]]
+  Rendered collection of kudos/_kudo.html.erb [2 times] (0.7ms)
+  Rendered dashboard/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 37ms (Views: 33.3ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-09-02 10:16:40 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ibgzvJ1ff7cTqX0A9V6dOq0nvC2eXv8lmpxc4ExsjmGoMiY1y7gxgFuPSW2maKDYW0Z983teLZ4X4GlO2Ts1fQ=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-02 10:16:40 -0400
+Processing by DashboardController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-09-02 10:16:40 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 51ms (Views: 50.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-09-02 10:16:53 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f6tKDkt7gQDCymtQF6VJwahvmkuQG5Ls7SRp48ErAB4LqPmxRiP0XV64GNuMoAoyCn7mGpZ19FFj1uiiZ8lcZQ==", "user"=>{"email"=>"an@innotac.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "an@innotac.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", 2016-09-02 14:16:53 UTC], ["last_sign_in_at", 2016-09-02 14:08:44 UTC], ["sign_in_count", 10], ["updated_at", 2016-09-02 14:16:53 UTC], ["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 149ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-02 10:16:53 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "an@innotac.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.4ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 6002]]
+  Rendered collection of kudos/_kudo.html.erb [2 times] (0.8ms)
+  Rendered dashboard/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 52ms (Views: 47.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/staffs/6002" for 127.0.0.1 at 2016-09-02 10:17:17 -0400
+Processing by StaffsController#show as HTML
+  Parameters: {"id"=>"6002"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6002], ["LIMIT", 1]]
+  Rendering staffs/show.html.erb within layouts/application
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 6002]]
+  Rendered collection of kudos/_kudo.html.erb [2 times] (0.8ms)
+  Rendered staffs/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 44ms (Views: 39.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-02 10:17:32 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "an@innotac.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.5ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 6002]]
+  Rendered collection of kudos/_kudo.html.erb [2 times] (1.3ms)
+  Rendered dashboard/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 46ms (Views: 41.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-09-02 10:17:36 -0400
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/_pager.html.erb (0.2ms)
+  Rendered staffs/_pager.html.erb (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 36ms (Views: 32.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/staffs.json?keywords=wer&page=0" for 127.0.0.1 at 2016-09-02 10:17:39 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"wer", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'wer%' OR lower(last_name) like 'wer%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/staffs.json?keywords=ayd&page=0" for 127.0.0.1 at 2016-09-02 10:17:41 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"ayd", "page"=>"0"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'ayd%' OR lower(last_name) like 'ayd%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/staffs.json?keywords=ayde&page=0" for 127.0.0.1 at 2016-09-02 10:17:42 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"ayde", "page"=>"0"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'ayde%' OR lower(last_name) like 'ayde%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/staffs.json?keywords=ayden&page=0" for 127.0.0.1 at 2016-09-02 10:17:42 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"ayden", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'ayden%' OR lower(last_name) like 'ayden%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/staffs.json?keywords=ayde&page=0" for 127.0.0.1 at 2016-09-02 10:17:46 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"ayde", "page"=>"0"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'ayde%' OR lower(last_name) like 'ayde%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/staffs.json?keywords=ayd&page=0" for 127.0.0.1 at 2016-09-02 10:17:46 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"ayd", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'ayd%' OR lower(last_name) like 'ayd%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/staffs.json?keywords=Dav&page=0" for 127.0.0.1 at 2016-09-02 10:17:48 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"Dav", "page"=>"0"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'dav%' OR lower(last_name) like 'dav%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/staffs.json?keywords=Davi&page=0" for 127.0.0.1 at 2016-09-02 10:17:48 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"Davi", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'davi%' OR lower(last_name) like 'davi%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 6ms (Views: 2.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/staffs.json?keywords=David&page=0" for 127.0.0.1 at 2016-09-02 10:17:48 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"David", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'david%' OR lower(last_name) like 'david%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/staffs.json?keywords=Davi&page=0" for 127.0.0.1 at 2016-09-02 10:17:50 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"Davi", "page"=>"0"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'davi%' OR lower(last_name) like 'davi%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/staffs.json?keywords=Dav&page=0" for 127.0.0.1 at 2016-09-02 10:17:50 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"Dav", "page"=>"0"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'dav%' OR lower(last_name) like 'dav%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 6ms (Views: 2.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/staffs.json?keywords=ayd&page=0" for 127.0.0.1 at 2016-09-02 10:17:53 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"ayd", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'ayd%' OR lower(last_name) like 'ayd%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/staffs.json?keywords=ayde&page=0" for 127.0.0.1 at 2016-09-02 10:17:53 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"ayde", "page"=>"0"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'ayde%' OR lower(last_name) like 'ayde%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/staffs.json?keywords=ayden&page=0" for 127.0.0.1 at 2016-09-02 10:17:53 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"ayden", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'ayden%' OR lower(last_name) like 'ayden%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/staffs/6004" for 127.0.0.1 at 2016-09-02 10:17:57 -0400
+Processing by StaffsController#show as HTML
+  Parameters: {"id"=>"6004"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6004], ["LIMIT", 1]]
+  Rendering staffs/show.html.erb within layouts/application
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 6004]]
+  Rendered collection of kudos/_kudo.html.erb [2 times] (0.7ms)
+  Rendered staffs/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 39ms (Views: 34.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-02 10:18:20 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "an@innotac.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 6002]]
+  Rendered collection of kudos/_kudo.html.erb [2 times] (1.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 40ms (Views: 36.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-09-02 10:18:22 -0400
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/_pager.html.erb (0.2ms)
+  Rendered staffs/_pager.html.erb (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 38ms (Views: 34.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/staffs.json?keywords=ayd&page=0" for 127.0.0.1 at 2016-09-02 10:18:24 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"ayd", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'ayd%' OR lower(last_name) like 'ayd%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/staffs.json?keywords=ayde&page=0" for 127.0.0.1 at 2016-09-02 10:18:25 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"ayde", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'ayde%' OR lower(last_name) like 'ayde%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/staffs.json?keywords=ayden&page=0" for 127.0.0.1 at 2016-09-02 10:18:25 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"ayden", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'ayden%' OR lower(last_name) like 'ayden%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/staffs/6004/sndkudo" for 127.0.0.1 at 2016-09-02 10:18:27 -0400
+Processing by StaffsController#sndkudo as HTML
+  Parameters: {"id"=>"6004"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6004], ["LIMIT", 1]]
+  Rendering staffs/sndkudo.html.erb within layouts/application
+  Rendered kudos/_form.html.erb (3.2ms)
+  Rendered staffs/sndkudo.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 39ms (Views: 34.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/staffs/6004/kudos" for 127.0.0.1 at 2016-09-02 10:18:59 -0400
+Processing by KudosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2nEDCVNTcWsbvmsYLTXWio9XJycUnbVtWRZbKcdL/Ydtlob16kKTgJ/QE4duCBVbmi1rQZXeV3z+EQu78FIzUQ==", "kudo"=>{"message"=>"Good height on your jumps!!!"}, "commit"=>"submit", "staff_id"=>"6004"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6004], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (7.1ms)[0m  [1m[32mINSERT INTO "kudos" ("sender", "message", "staff_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["sender", "an@innotac.com"], ["message", "Good height on your jumps!!!"], ["staff_id", 6004], ["created_at", 2016-09-02 14:18:59 UTC], ["updated_at", 2016-09-02 14:18:59 UTC]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/staffs/6004
+Completed 302 Found in 20ms (ActiveRecord: 14.2ms)
+
+
+Started GET "/staffs/6004" for 127.0.0.1 at 2016-09-02 10:18:59 -0400
+Processing by StaffsController#show as HTML
+  Parameters: {"id"=>"6004"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6004], ["LIMIT", 1]]
+  Rendering staffs/show.html.erb within layouts/application
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 6004]]
+  Rendered collection of kudos/_kudo.html.erb [3 times] (0.8ms)
+  Rendered staffs/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 35ms (Views: 30.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-02 10:19:10 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "an@innotac.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 6002]]
+  Rendered collection of kudos/_kudo.html.erb [2 times] (0.7ms)
+  Rendered dashboard/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 33ms (Views: 29.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-09-02 10:19:19 -0400
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/_pager.html.erb (0.2ms)
+  Rendered staffs/_pager.html.erb (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 34ms (Views: 30.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/staffs.json?keywords=wer&page=0" for 127.0.0.1 at 2016-09-02 10:19:23 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"wer", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'wer%' OR lower(last_name) like 'wer%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/staffs.json?keywords=Her&page=0" for 127.0.0.1 at 2016-09-02 10:19:25 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"Her", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.6ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'her%' OR lower(last_name) like 'her%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 6ms (Views: 3.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/staffs.json?keywords=wer&page=0" for 127.0.0.1 at 2016-09-02 10:19:25 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"wer", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'wer%' OR lower(last_name) like 'wer%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/staffs.json?keywords=aye&page=0" for 127.0.0.1 at 2016-09-02 10:19:29 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"aye", "page"=>"0"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'aye%' OR lower(last_name) like 'aye%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/staffs.json?keywords=ayd&page=0" for 127.0.0.1 at 2016-09-02 10:19:30 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"ayd", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'ayd%' OR lower(last_name) like 'ayd%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/staffs.json?keywords=ayde&page=0" for 127.0.0.1 at 2016-09-02 10:19:30 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"ayde", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'ayde%' OR lower(last_name) like 'ayde%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/staffs.json?keywords=ayden&page=0" for 127.0.0.1 at 2016-09-02 10:19:30 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"ayden", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'ayden%' OR lower(last_name) like 'ayden%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/staffs/6004" for 127.0.0.1 at 2016-09-02 10:19:34 -0400
+Processing by StaffsController#show as HTML
+  Parameters: {"id"=>"6004"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6004], ["LIMIT", 1]]
+  Rendering staffs/show.html.erb within layouts/application
+  [1m[36mKudo Load (0.5ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 6004]]
+  Rendered collection of kudos/_kudo.html.erb [3 times] (0.9ms)
+  Rendered staffs/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 36ms (Views: 32.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-02 10:20:51 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "an@innotac.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.4ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 6002]]
+  Rendered collection of kudos/_kudo.html.erb [2 times] (1.1ms)
+  Rendered dashboard/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 36ms (Views: 32.5ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-09-02 10:20:58 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"aQ24oVPnSAzzWS992GOvljHfBn8ZvSie/rQpqpoDDFze6j1d6vaq53c3V+KbXmxHJKVKGZj+yo9Zs3k4rRrCig=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-02 10:20:58 -0400
+Processing by DashboardController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-09-02 10:20:58 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 48ms (Views: 46.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-09-02 13:38:06 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"P3k8MSv00KL7ZQG8Y+x8U9ksps4D+oYP0sJfQux/odpgdJUtmtZ+FjBKUmsaYQYK7cSIF+a/oc+OE9ak7OKQew==", "user"=>{"email"=>"an@innotac.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "an@innotac.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", 2016-09-02 17:38:06 UTC], ["last_sign_in_at", 2016-09-02 14:16:53 UTC], ["sign_in_count", 11], ["updated_at", 2016-09-02 17:38:06 UTC], ["id", 1]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 628ms (ActiveRecord: 7.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-02 13:38:07 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "an@innotac.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.4ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 6002]]
+  Rendered collection of kudos/_kudo.html.erb [2 times] (2.8ms)
+  Rendered dashboard/index.html.erb within layouts/application (47.1ms)
+Completed 200 OK in 390ms (Views: 367.5ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-09-02 13:38:11 -0400
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/_pager.html.erb (0.3ms)
+  Rendered staffs/_pager.html.erb (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 43ms (Views: 39.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/staffs.json?keywords=dav&page=0" for 127.0.0.1 at 2016-09-02 13:38:19 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"dav", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.9ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'dav%' OR lower(last_name) like 'dav%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 7ms (Views: 3.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/staffs.json?keywords=davi&page=0" for 127.0.0.1 at 2016-09-02 13:38:19 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"davi", "page"=>"0"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'davi%' OR lower(last_name) like 'davi%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 5ms (Views: 2.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/staffs.json?keywords=david&page=0" for 127.0.0.1 at 2016-09-02 13:38:19 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"david", "page"=>"0"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'david%' OR lower(last_name) like 'david%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/staffs/6003/sndkudo" for 127.0.0.1 at 2016-09-02 13:38:22 -0400
+Processing by StaffsController#sndkudo as HTML
+  Parameters: {"id"=>"6003"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 138ms (ActiveRecord: 0.6ms)
+
+
+  
+RestClient::UnsupportedMediaType (415 Unsupported Media Type):
+  
+app/controllers/staffs_controller.rb:33:in `sndkudo'
+  Rendering /Users/An/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/An/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/An/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.1ms)
+  Rendering /Users/An/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/An/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /Users/An/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/An/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/An/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (63.6ms)
+Started GET "/staffs.json?keywords=dav&page=0" for 127.0.0.1 at 2016-09-02 13:42:30 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"dav", "page"=>"0"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.6ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'dav%' OR lower(last_name) like 'dav%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 41ms (Views: 9.6ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/staffs.json?keywords=davi&page=0" for 127.0.0.1 at 2016-09-02 13:42:30 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"davi", "page"=>"0"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'davi%' OR lower(last_name) like 'davi%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 7ms (Views: 3.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/staffs.json?keywords=david&page=0" for 127.0.0.1 at 2016-09-02 13:42:30 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"david", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'david%' OR lower(last_name) like 'david%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 5ms (Views: 1.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/staffs/6003/sndkudo" for 127.0.0.1 at 2016-09-02 13:42:33 -0400
+Processing by StaffsController#sndkudo as HTML
+  Parameters: {"id"=>"6003"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.6ms)
+
+
+  
+RestClient::UnsupportedMediaType (415 Unsupported Media Type):
+  
+app/controllers/staffs_controller.rb:35:in `sndkudo'
+  Rendering /Users/An/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/An/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/An/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.9ms)
+  Rendering /Users/An/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/An/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /Users/An/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/An/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/An/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (75.5ms)
+Started GET "/staffs.json?keywords=dav&page=0" for 127.0.0.1 at 2016-09-02 13:43:55 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"dav", "page"=>"0"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/staffs.json?keywords=davi&page=0" for 127.0.0.1 at 2016-09-02 13:43:55 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"davi", "page"=>"0"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (2.6ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'dav%' OR lower(last_name) like 'dav%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mStaff Load (3.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'davi%' OR lower(last_name) like 'davi%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 64ms (Views: 7.7ms | ActiveRecord: 8.5ms)
+
+
+Completed 200 OK in 24ms (Views: 2.3ms | ActiveRecord: 12.7ms)
+
+
+Started GET "/staffs.json?keywords=david&page=0" for 127.0.0.1 at 2016-09-02 13:43:55 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"david", "page"=>"0"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'david%' OR lower(last_name) like 'david%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 5ms (Views: 1.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/staffs/6003/sndkudo" for 127.0.0.1 at 2016-09-02 13:43:58 -0400
+Processing by StaffsController#sndkudo as HTML
+  Parameters: {"id"=>"6003"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 1.0ms)
+
+
+  
+RestClient::UnsupportedMediaType (415 Unsupported Media Type):
+  
+app/controllers/staffs_controller.rb:35:in `sndkudo'
+  Rendering /Users/An/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/An/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/An/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.2ms)
+  Rendering /Users/An/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/An/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /Users/An/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/An/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/An/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (75.0ms)
+Started GET "/staffs.json?keywords=dav&page=0" for 127.0.0.1 at 2016-09-02 13:45:13 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"dav", "page"=>"0"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.6ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'dav%' OR lower(last_name) like 'dav%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 39ms (Views: 6.9ms | ActiveRecord: 13.4ms)
+
+
+Started GET "/staffs.json?keywords=davi&page=0" for 127.0.0.1 at 2016-09-02 13:45:13 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"davi", "page"=>"0"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.6ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'davi%' OR lower(last_name) like 'davi%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 5ms (Views: 2.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/staffs.json?keywords=david&page=0" for 127.0.0.1 at 2016-09-02 13:45:13 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"david", "page"=>"0"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'david%' OR lower(last_name) like 'david%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 5ms (Views: 1.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/staffs/6003/sndkudo" for 127.0.0.1 at 2016-09-02 13:45:15 -0400
+Processing by StaffsController#sndkudo as HTML
+  Parameters: {"id"=>"6003"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  Rendering staffs/sndkudo.html.erb within layouts/application
+  Rendered kudos/_form.html.erb (47.9ms)
+  Rendered staffs/sndkudo.html.erb within layouts/application (50.3ms)
+Completed 200 OK in 2951ms (Views: 367.7ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-02 14:07:06 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.6ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "an@innotac.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 6002]]
+  Rendered collection of kudos/_kudo.html.erb [2 times] (5.4ms)
+  Rendered dashboard/index.html.erb within layouts/application (45.5ms)
+Completed 200 OK in 406ms (Views: 343.8ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-09-02 14:07:10 -0400
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/_pager.html.erb (0.3ms)
+  Rendered staffs/_pager.html.erb (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 48ms (Views: 43.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/staffs.json?keywords=dav&page=0" for 127.0.0.1 at 2016-09-02 14:07:15 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"dav", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.9ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'dav%' OR lower(last_name) like 'dav%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 8ms (Views: 3.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/staffs.json?keywords=davy&page=0" for 127.0.0.1 at 2016-09-02 14:07:15 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"davy", "page"=>"0"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'davy%' OR lower(last_name) like 'davy%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/staffs.json?keywords=dav&page=0" for 127.0.0.1 at 2016-09-02 14:07:15 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"dav", "page"=>"0"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.6ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'dav%' OR lower(last_name) like 'dav%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 6ms (Views: 2.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/staffs.json?keywords=davi&page=0" for 127.0.0.1 at 2016-09-02 14:07:16 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"davi", "page"=>"0"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'davi%' OR lower(last_name) like 'davi%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 6ms (Views: 2.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/staffs.json?keywords=david&page=0" for 127.0.0.1 at 2016-09-02 14:07:16 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"david", "page"=>"0"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.6ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'david%' OR lower(last_name) like 'david%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/staffs/6003/sndkudo" for 127.0.0.1 at 2016-09-02 14:07:18 -0400
+Processing by StaffsController#sndkudo as HTML
+  Parameters: {"id"=>"6003"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  Rendering staffs/sndkudo.html.erb within layouts/application
+  Rendered kudos/_form.html.erb (496.5ms)
+  Rendered staffs/sndkudo.html.erb within layouts/application (498.8ms)
+Completed 200 OK in 532ms (Views: 526.5ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/staffs/6003/kudos" for 127.0.0.1 at 2016-09-02 14:07:41 -0400
+Processing by KudosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OmMXrOQHjVbNPyREJ3I6dLl6aH3jqbZkGi03jkuxVImlb+X6cFwI9QuEq4j1G2Qaotf+GlA9LllDFWJcJkTkFQ==", "kudo"=>{"message"=>"Kudo for David, hope it works..."}, "commit"=>"submit", "staff_id"=>"6003"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "kudos" ("sender", "message", "staff_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["sender", "an@innotac.com"], ["message", "Kudo for David, hope it works..."], ["staff_id", 6003], ["created_at", 2016-09-02 18:07:41 UTC], ["updated_at", 2016-09-02 18:07:41 UTC]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/staffs/6003
+Completed 302 Found in 2930ms (ActiveRecord: 7.2ms)
+
+
+Started GET "/staffs/6003" for 127.0.0.1 at 2016-09-02 14:07:44 -0400
+Processing by StaffsController#show as HTML
+  Parameters: {"id"=>"6003"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  Rendering staffs/show.html.erb within layouts/application
+  [1m[36mKudo Load (0.4ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 6003]]
+  Rendered collection of kudos/_kudo.html.erb [4 times] (1.1ms)
+  Rendered staffs/show.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 45ms (Views: 39.7ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/staffs/6003/kudos" for 127.0.0.1 at 2016-09-02 14:24:33 -0400
+Processing by KudosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OmMXrOQHjVbNPyREJ3I6dLl6aH3jqbZkGi03jkuxVImlb+X6cFwI9QuEq4j1G2Qaotf+GlA9LllDFWJcJkTkFQ==", "kudo"=>{"message"=>"Kudo for David, another test"}, "commit"=>"submit", "staff_id"=>"6003"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (10.3ms)[0m  [1m[32mINSERT INTO "kudos" ("sender", "message", "staff_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["sender", "an@innotac.com"], ["message", "Kudo for David, another test"], ["staff_id", 6003], ["created_at", 2016-09-02 18:24:33 UTC], ["updated_at", 2016-09-02 18:24:33 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/staffs/6003
+Completed 302 Found in 2540ms (ActiveRecord: 18.7ms)
+
+
+Started GET "/staffs/6003" for 127.0.0.1 at 2016-09-02 14:24:36 -0400
+Processing by StaffsController#show as HTML
+  Parameters: {"id"=>"6003"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  Rendering staffs/show.html.erb within layouts/application
+  [1m[36mKudo Load (0.6ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 6003]]
+  Rendered collection of kudos/_kudo.html.erb [5 times] (1.7ms)
+  Rendered staffs/show.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 56ms (Views: 50.6ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/staffs/6003/kudos/2" for 127.0.0.1 at 2016-09-02 14:29:39 -0400
+Processing by KudosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Q/KIlzT2A4rGfr/z4RwxsD4BorI/PhlWzX7bugdDKY7c/nrBoK2GKQDFMD8zdW/eJaw01YyqgWuURo5oaraZEg==", "staff_id"=>"6003", "id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT  "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1 AND "kudos"."id" = $2 LIMIT $3[0m  [["staff_id", 6003], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "kudos" WHERE "kudos"."id" = $1[0m  [["id", 2]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/staffs/6003
+Completed 302 Found in 11ms (ActiveRecord: 7.3ms)
+
+
+Started GET "/staffs/6003" for 127.0.0.1 at 2016-09-02 14:29:39 -0400
+Processing by StaffsController#show as HTML
+  Parameters: {"id"=>"6003"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  Rendering staffs/show.html.erb within layouts/application
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 6003]]
+  Rendered collection of kudos/_kudo.html.erb [4 times] (1.0ms)
+  Rendered staffs/show.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 45ms (Views: 40.9ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/staffs/6003/kudos/5" for 127.0.0.1 at 2016-09-02 14:29:42 -0400
+Processing by KudosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"6vYJMFS5KqvHGnL6dNf7YV+vC6W3XYNWkodjecp8vu91+vtmwOKvCAGh/TamvqUPRAKdwgTJG2vLvzarp4kOcw==", "staff_id"=>"6003", "id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT  "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1 AND "kudos"."id" = $2 LIMIT $3[0m  [["staff_id", 6003], ["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "kudos" WHERE "kudos"."id" = $1[0m  [["id", 5]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/staffs/6003
+Completed 302 Found in 7ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/staffs/6003" for 127.0.0.1 at 2016-09-02 14:29:42 -0400
+Processing by StaffsController#show as HTML
+  Parameters: {"id"=>"6003"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  Rendering staffs/show.html.erb within layouts/application
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 6003]]
+  Rendered collection of kudos/_kudo.html.erb [3 times] (0.9ms)
+  Rendered staffs/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 44ms (Views: 39.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-02 14:29:51 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "an@innotac.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.5ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 6002]]
+  Rendered collection of kudos/_kudo.html.erb [2 times] (0.7ms)
+  Rendered dashboard/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 45ms (Views: 40.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-09-02 14:38:23 -0400
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/_pager.html.erb (0.4ms)
+  Rendered staffs/_pager.html.erb (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 65ms (Views: 44.1ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/staffs.json?keywords=dav&page=0" for 127.0.0.1 at 2016-09-02 14:38:26 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"dav", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'dav%' OR lower(last_name) like 'dav%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 15ms (Views: 6.7ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/staffs.json?keywords=davi&page=0" for 127.0.0.1 at 2016-09-02 14:38:26 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"davi", "page"=>"0"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.6ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'davi%' OR lower(last_name) like 'davi%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 6ms (Views: 2.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/staffs.json?keywords=david&page=0" for 127.0.0.1 at 2016-09-02 14:38:26 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"david", "page"=>"0"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'david%' OR lower(last_name) like 'david%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/staffs/6003/sndkudo" for 127.0.0.1 at 2016-09-02 14:38:29 -0400
+Processing by StaffsController#sndkudo as HTML
+  Parameters: {"id"=>"6003"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  Rendering staffs/sndkudo.html.erb within layouts/application
+  Rendered kudos/_form.html.erb (13.6ms)
+  Rendered staffs/sndkudo.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 51ms (Views: 43.3ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/staffs/6003/kudos" for 127.0.0.1 at 2016-09-02 14:38:39 -0400
+Processing by KudosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oCi0Cathuj5jUNag/ohUsajiTG/qwowzkjKi8W1yuiU/JEZfPzo/naXrWWws4Qrfs0/aCFlWFA7LCvcjAIcKuQ==", "kudo"=>{"message"=>"Fire and Forget..."}, "commit"=>"submit", "staff_id"=>"6003"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "kudos" ("sender", "message", "staff_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["sender", "an@innotac.com"], ["message", "Fire and Forget..."], ["staff_id", 6003], ["created_at", 2016-09-02 18:38:39 UTC], ["updated_at", 2016-09-02 18:38:39 UTC]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/staffs/6003
+Completed 302 Found in 13ms (ActiveRecord: 6.9ms)
+
+
+Started GET "/staffs/6003" for 127.0.0.1 at 2016-09-02 14:38:39 -0400
+Processing by StaffsController#show as HTML
+  Parameters: {"id"=>"6003"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  Rendering staffs/show.html.erb within layouts/application
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 6003]]
+  Rendered collection of kudos/_kudo.html.erb [4 times] (1.1ms)
+  Rendered staffs/show.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 37ms (Views: 32.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-02 15:32:56 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.7ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "an@innotac.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 6002]]
+  Rendered collection of kudos/_kudo.html.erb [2 times] (5.6ms)
+  Rendered dashboard/index.html.erb within layouts/application (39.7ms)
+Completed 200 OK in 393ms (Views: 332.9ms | ActiveRecord: 12.9ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-09-02 15:32:58 -0400
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/_pager.html.erb (0.3ms)
+  Rendered staffs/_pager.html.erb (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 45ms (Views: 41.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/staffs.json?keywords=aen&page=0" for 127.0.0.1 at 2016-09-02 15:33:02 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"aen", "page"=>"0"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/staffs.json?keywords=aenr&page=0" for 127.0.0.1 at 2016-09-02 15:33:02 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"aenr", "page"=>"0"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.8ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'aen%' OR lower(last_name) like 'aen%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 21ms (Views: 1.0ms | ActiveRecord: 1.7ms)
+
+
+  [1m[36mStaff Load (1.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'aenr%' OR lower(last_name) like 'aenr%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 7ms (Views: 0.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/staffs.json?keywords=aen&page=0" for 127.0.0.1 at 2016-09-02 15:33:02 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"aen", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'aen%' OR lower(last_name) like 'aen%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/staffs.json?keywords=dav&page=0" for 127.0.0.1 at 2016-09-02 15:33:04 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"dav", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'dav%' OR lower(last_name) like 'dav%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/staffs.json?keywords=davi&page=0" for 127.0.0.1 at 2016-09-02 15:33:04 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"davi", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'davi%' OR lower(last_name) like 'davi%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/staffs.json?keywords=david&page=0" for 127.0.0.1 at 2016-09-02 15:33:04 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"david", "page"=>"0"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'david%' OR lower(last_name) like 'david%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/staffs/6003/sndkudo" for 127.0.0.1 at 2016-09-02 15:33:07 -0400
+Processing by StaffsController#sndkudo as HTML
+  Parameters: {"id"=>"6003"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  Rendering staffs/sndkudo.html.erb within layouts/application
+  Rendered kudos/_form.html.erb (512.0ms)
+  Rendered staffs/sndkudo.html.erb within layouts/application (514.4ms)
+Completed 200 OK in 550ms (Views: 545.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/staffs/6003/kudos" for 127.0.0.1 at 2016-09-02 15:34:10 -0400
+Processing by KudosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MEAcz1iI6oILAR6AUy7O3Jrak9UVtyIOffPQNM1yx4mvTO6ZzNNvIc26kUyBR5CygXcFsqYjujMky4XmoId3FQ==", "kudo"=>{"message"=>"Yay, with new config.yml"}, "commit"=>"submit", "staff_id"=>"6003"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (7.2ms)[0m  [1m[32mINSERT INTO "kudos" ("sender", "message", "staff_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["sender", "an@innotac.com"], ["message", "Yay, with new config.yml"], ["staff_id", 6003], ["created_at", 2016-09-02 19:34:10 UTC], ["updated_at", 2016-09-02 19:34:10 UTC]]
+  [1m[35m (11.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/staffs/6003
+Completed 302 Found in 27ms (ActiveRecord: 20.1ms)
+
+
+Started GET "/staffs/6003" for 127.0.0.1 at 2016-09-02 15:34:10 -0400
+Processing by StaffsController#show as HTML
+  Parameters: {"id"=>"6003"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  Rendering staffs/show.html.erb within layouts/application
+  [1m[36mKudo Load (0.4ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 6003]]
+  Rendered collection of kudos/_kudo.html.erb [5 times] (1.3ms)
+  Rendered staffs/show.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 53ms (Views: 47.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-02 16:56:12 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.6ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "an@innotac.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 6002]]
+  Rendered collection of kudos/_kudo.html.erb [2 times] (6.2ms)
+  Rendered dashboard/index.html.erb within layouts/application (39.1ms)
+Completed 200 OK in 367ms (Views: 314.5ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-09-02 16:56:18 -0400
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/_pager.html.erb (0.3ms)
+  Rendered staffs/_pager.html.erb (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 43ms (Views: 39.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/staffs.json?keywords=ayd&page=0" for 127.0.0.1 at 2016-09-02 16:56:24 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"ayd", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.8ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'ayd%' OR lower(last_name) like 'ayd%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 6ms (Views: 1.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/staffs.json?keywords=ayde&page=0" for 127.0.0.1 at 2016-09-02 16:56:24 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"ayde", "page"=>"0"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'ayde%' OR lower(last_name) like 'ayde%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/staffs.json?keywords=ayden&page=0" for 127.0.0.1 at 2016-09-02 16:56:24 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"ayden", "page"=>"0"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'ayden%' OR lower(last_name) like 'ayden%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/staffs/6004/sndkudo" for 127.0.0.1 at 2016-09-02 16:56:27 -0400
+Processing by StaffsController#sndkudo as HTML
+  Parameters: {"id"=>"6004"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6004], ["LIMIT", 1]]
+  Rendering staffs/sndkudo.html.erb within layouts/application
+  Rendered kudos/_form.html.erb (485.6ms)
+  Rendered staffs/sndkudo.html.erb within layouts/application (488.0ms)
+Completed 200 OK in 522ms (Views: 517.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/staffs/6004/kudos" for 127.0.0.1 at 2016-09-02 16:56:42 -0400
+Processing by KudosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"P4EB2OsGNkKDUvsojhyq5v5py9Mbbg9I632PRIe+GWygjfOOf12z4UXpdORcdfSI5cRdtKj6l3WyRdqW6kup8A==", "kudo"=>{"message"=>"No Notification service"}, "commit"=>"submit", "staff_id"=>"6004"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6004], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "kudos" ("sender", "message", "staff_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["sender", "an@innotac.com"], ["message", "No Notification service"], ["staff_id", 6004], ["created_at", 2016-09-02 20:56:42 UTC], ["updated_at", 2016-09-02 20:56:42 UTC]]
+  [1m[35m (12.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/staffs/6004
+Completed 302 Found in 22ms (ActiveRecord: 14.5ms)
+
+
+Started GET "/staffs/6004" for 127.0.0.1 at 2016-09-02 16:56:42 -0400
+Processing by StaffsController#show as HTML
+  Parameters: {"id"=>"6004"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6004], ["LIMIT", 1]]
+  Rendering staffs/show.html.erb within layouts/application
+  [1m[36mKudo Load (0.4ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 6004]]
+  Rendered collection of kudos/_kudo.html.erb [4 times] (1.1ms)
+  Rendered staffs/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 53ms (Views: 41.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-02 16:57:26 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "an@innotac.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 6002]]
+  Rendered collection of kudos/_kudo.html.erb [2 times] (0.8ms)
+  Rendered dashboard/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 41ms (Views: 37.3ms | ActiveRecord: 0.9ms)
+
+
