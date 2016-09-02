@@ -14,8 +14,8 @@ Download postgrest enterprise dmg, and install first. Then move to the postgres 
 * createuser --createdb --login -P flashSPR -U postgres
 * bundle install
 * vi config/datbase.yml
-* bundle exec rails generate devise:install
-* bundle exec rails generate devise user
+* DO NOT DO - ALREADY in DB MIGRATE: bundle exec rails generate devise:install
+* DO NOT DO - ALREADY in DB MIGRATE: bundle exec rails generate devise user
 * bundle exec rake db:create
 * bundle exec rake db:migrate
 * sudo npm install -g bower
