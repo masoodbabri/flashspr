@@ -1,0 +1,11 @@
+defaults: &defaults
+  notification_rest_service_url: http://localhost:8080/notify
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
