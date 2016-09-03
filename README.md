@@ -1,5 +1,7 @@
 # README
 
+Windows - Setup is painful
+
 Download postgrest enterprise dmg, and install first. Then move to the postgres service
 Set up postgresql on mac:  https://launchschool.com/blog/how-to-install-postgresql-on-a-mac
 Set up nodejs npm on mac:  https://coolestguidesontheplanet.com/installing-node-js-on-osx-10-10-yosemite/
