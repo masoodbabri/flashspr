@@ -12,10 +12,11 @@
             <%= @staff.created_at.to_date %>
           </h3>
           <h2 class="h3">
+          <span class="glyphicon glyphicon-user"></span>
             <%= @staff.first_name %> <%= @staff.last_name %>
             <small><%= @staff.title %></small>
           </h2>
-          <h4><%= @staff.email %></h4>
+          <p><%= @staff.email %></p>
         </li>
   </ol>
 </section>
