@@ -32,3 +32,15 @@ Staff.create(
     last_name: 'Nguyen',
     title: 'Intern',
     email: 'feilong601@gmail.com')
+
+Staff.create(
+    first_name: 'Nolawi',
+    last_name: 'Petros',
+    title: 'UI Dude',
+    email: 'nolawi.petrso@gmail.com')
+
+Staff.create(
+    first_name: 'Amirdash',
+    last_name: 'Hasbold',
+    title: 'UI Dude',
+    email: 'amirdash@yahoo.com')
