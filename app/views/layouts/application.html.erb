@@ -8,7 +8,16 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
-  <body class="container">
+  <body >
+    <header>
+
+      <nav class="navbar navbar-default ">
+        <div class="container">
+          <ul class="nav navbar-nav"> <li class="active"><a href="#">Home</a></li> <li><a href="#">Update Profile</a></li> <li><a href="#">Send/View Kudos</a></li> <li><a href="#">Kudos Report</a></li></ul>
+        </div>
+      </nav>
+    </header>
+    <div class="container">
     <% if notice.present? %>
         <aside class="alert alert-info">
           <%= notice %>
@@ -21,5 +30,9 @@
     <% end %>
 
     <%= yield %>
+    </div>
+    <footer>
+      <p>FlashSPR 2016</p>
+    </footer>
   </body>
 </html>
