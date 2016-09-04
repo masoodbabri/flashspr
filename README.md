@@ -1,5 +1,7 @@
 # README
 
+Windows - Setup is painful
+
 ##Postgres
 Download postgrest enterprise dmg, and install first. Then move to the postgres service
 * Set up postgresql on mac:  https://launchschool.com/blog/how-to-install-postgresql-on-a-mac
@@ -25,5 +27,4 @@ Download postgrest enterprise dmg, and install first. Then move to the postgres 
 
 ## Running the application locally
 * rails server
-
 

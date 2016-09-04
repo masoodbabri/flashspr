@@ -1,7 +1,19 @@
 class KudosController < ApplicationController
+
+  after_action only: :create do
+    unless @skip_after_action
+      url = APP_CONFIG['notification_rest_service_url']
+      payload = {'subject' => 'Staff Performance and Recognition Kudo','body' => kudo_params[:message], 'recipent' => @staff.email}
+      initheader = { 'Content-Type' => 'application/json' }
+      encoded = JSON.generate(payload)
+      Thread.new do
+        RestClient.post(url, encoded, initheader)
+      end
+    end
+  end
+
   def create
 
-    kudo_params[:sender] = current_user.email
     @staff = Staff.find(params[:staff_id])
     @kudo = @staff.kudos.create(
         sender: current_user.email,

@@ -1,6 +1,7 @@
 <header>
   <h1 class="h2">Staff Details</h1>
 </header>
+<<<<<<< HEAD
 <section class="search-results">
   <header>
     <h1 class="h3"><%= @staff.email %></h1>
@@ -20,6 +21,10 @@
         </li>
   </ol>
 </section>
+=======
+
+<%= render 'curstaff' %>
+>>>>>>> 0bb57103e910c3c86e68af9c6ea8824b1a8f1108
 
 <div class="ui segment">
   <h2 class="ui left floated header">Kudos for <%= @staff.first_name %> <%= @staff.last_name %></h2>
@@ -31,3 +36,5 @@
   </table>
   </p>
 </div>
+
+<%= link_to 'Home', root_path, class: "btn btn-primary btn-sm" %>
