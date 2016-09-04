@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :kudos
     member do
       get 'sndkudo'
+      get 'erstaff'
     end
   end
 
