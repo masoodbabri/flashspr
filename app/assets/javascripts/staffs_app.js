@@ -9,10 +9,10 @@ app.controller("StaffSearchController", [
         $scope.staffs = [];
         $scope.search = function(searchTerm) {
             $scope.loading = true;
-            if (searchTerm.length < 3) {
+            if (searchTerm.length < 2) {
                 return;
             }
-            // ... rest of the function
+
             $http.get("/staffs.json",
                 { "params": { "keywords": searchTerm, "page": page } }
             ).success(

@@ -1,0 +1,40 @@
+<%= form_for @staff do |f| %>
+
+    <% if @staff.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= pluralize(@staff.errors.count, "error") %> prohibited
+            this staff from being saved:
+          </h2>
+          <ul>
+            <% @staff.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <p>
+      <%= f.label :First_Name %><br>
+      <%= f.text_field :first_name %>
+    </p>
+    
+    <p>
+      <%= f.label :Last_Name %><br>
+      <%= f.text_field :last_name %>
+    </p>
+
+    <p>
+      <%= f.label :Title %><br>
+      <%= f.text_field :title %>
+    </p>
+    
+    <p>
+      <%= f.label :Email %><br>
+      <%= f.text_field :email %>
+    </p>
+
+    <p>
+      <%= f.submit 'submit', class: 'btn btn-primary btn-sm' %>
+    </p>
+<% end %>

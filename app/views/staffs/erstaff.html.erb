@@ -1,0 +1,10 @@
+<header>
+  <h1 class="h2">Edit/Remove a Staff Member</h1>
+</header>
+
+<%= render 'curstaff' %>
+
+<%= link_to 'Edit', edit_staff_path(@staff), class: 'btn btn-primary btn-sm' %>
+<%= link_to 'Destroy', staff_path(@staff), class: 'btn btn-primary btn-sm',
+            method: :delete,
+            data: { confirm: 'Are you sure?' } %>
