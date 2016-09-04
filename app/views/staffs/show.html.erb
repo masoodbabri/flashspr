@@ -1,30 +1,7 @@
 <header>
   <h1 class="h2">Staff Details</h1>
 </header>
-<<<<<<< HEAD
-<section class="search-results">
-  <header>
-    <h1 class="h3"><%= @staff.email %></h1>
-  </header>
-  <ol class="list-group">
-        <li class="list-group-item clearfix">
-          <h3 class="pull-right">
-            <small class="text-uppercase">Joined</small>
-            <%= @staff.created_at.to_date %>
-          </h3>
-          <h2 class="h3">
-          <span class="glyphicon glyphicon-user"></span>
-            <%= @staff.first_name %> <%= @staff.last_name %>
-            <small><%= @staff.title %></small>
-          </h2>
-          <p><%= @staff.email %></p>
-        </li>
-  </ol>
-</section>
-=======
 
-<%= render 'curstaff' %>
->>>>>>> 0bb57103e910c3c86e68af9c6ea8824b1a8f1108
 
 <div class="ui segment">
   <h2 class="ui left floated header">Kudos for <%= @staff.first_name %> <%= @staff.last_name %></h2>
