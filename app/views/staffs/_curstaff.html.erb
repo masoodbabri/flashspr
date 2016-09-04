@@ -1,0 +1,18 @@
+<section class="current_staff">
+  <header>
+    <h1 class="h3"><%= @staff.email %></h1>
+  </header>
+  <ol class="list-group">
+    <li class="list-group-item clearfix">
+      <h3 class="pull-right">
+        <small class="text-uppercase">Joined</small>
+        <%= @staff.created_at.to_date %>
+      </h3>
+      <h2 class="h3">
+        <%= @staff.first_name %> <%= @staff.last_name %>
+        <small><%= @staff.title %></small>
+      </h2>
+      <h4><%= @staff.email %></h4>
+    </li>
+  </ol>
+</section>

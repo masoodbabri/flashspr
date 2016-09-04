@@ -1,25 +1,8 @@
 <header>
   <h1 class="h2">Send a Kudo</h1>
 </header>
-<section class="search-results">
-  <header>
-    <h1 class="h3"><%= @staff.email %></h1>
-  </header>
-  <ol class="list-group">
-        <li class="list-group-item clearfix">
-          <h3 class="pull-right">
-            <small class="text-uppercase">Joined</small>
-            <%= @staff.created_at.to_date %>
-          </h3>
-          <h2 class="h3">
-            <%= @staff.first_name %> <%= @staff.last_name %>
-            <small><%= @staff.title %></small>
-          </h2>
-          <h4><%= @staff.email %></h4>
-        </li>
-  </ol>
-</section>
 
+<%= render 'curstaff' %>
 
 <div class="ui segment">
   <h2 class="ui left floated header">Send a Kudo to <%= @staff.first_name %> <%= @staff.last_name %></h2>
