@@ -43,3 +43,7 @@ Download postgrest enterprise dmg, and install first. Then move to the postgres 
 * File in this version: vi /var/lib/pgsql/9.5/data/pg_hba.conf
 * Restart: 
 * The createuser command doesn't create the DB as it is supposed to - make sure to use quotes for UPPERCASE - CREATE DATABASE "flashSPR"
+
+## Node Install on RHEL 6
+* curl --silent --location https://rpm.nodesource.com/setup_4.x | bash -
+* yum install -y nodejs
