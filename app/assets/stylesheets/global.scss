@@ -32,6 +32,9 @@ ul.nav.logo {
 	}
 
 }
+.list-group-item {
+	    border-color: #c6e7f3 ;
+}
 
 footer {
 	position: absolute;
@@ -42,6 +45,8 @@ footer {
         border-color: #c6e7f3 !important;
     margin-top: 20px;
     padding:10px;
+    border: 1px solid;
+
 
     p {
     	color: grey;
