@@ -28,12 +28,6 @@ class KudosController < ApplicationController
   end
 
   def report
-    report_generator = GruffGraphingService.new
-    report_generator.create_chart
-    report_generator.determine_title I18n.t('controllers.kudos.report_title_name')
-    report_generator.create_chart_details
-    report_generator.add_data_to_chart :kudos, [0,12,2,34,5,54,5,32,21,60,43,4]#Kudo.monthly_count(GruffGraphingService::MONTHS_IN_YEAR)
-    report_generator.generate_chart I18n.t('controllers.kudos.report_file_name')
   end
 
   private

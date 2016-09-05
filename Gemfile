@@ -49,4 +49,4 @@ gem 'bower-rails'
 gem 'faker'
 gem 'rest-client'
 gem 'pundit'
-gem 'gruff'
+
