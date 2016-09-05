@@ -32,7 +32,14 @@ Download postgrest enterprise dmg, and install first. Then move to the postgres 
 * rpm -Uvh http://yum.postgresql.org/9.5/redhat/rhel-6-x86_64/pgdg-redhat95-9.5-2.noarch.rpm
 * yum install postgresql95-server postgresql95
 * yum install postgresql95 postgresql95-server postgresql95-libs postgresql95-contrib postgresql95-devel
+* service postgresql-9.5 initdb 
+* service postgresql-9.5 start
+* chkconfig postgresql-9.5 on
+* ssu - postgres
+* psql -U postgres
 * Need to update the authentication model: 
 * http://stackoverflow.com/questions/18664074/getting-error-peer-authentication-failed-for-user-postgres-when-trying-to-ge
 * http://stackoverflow.com/questions/33951528/fatal-peer-authentication-failed-for-user-rails
+* File in this version: vi /var/lib/pgsql/9.5/data/pg_hba.conf
+* Restart: 
 * The createuser command doesn't create the DB as it is supposed to - make sure to use quotes for UPPERCASE - CREATE DATABASE "flashSPR"
