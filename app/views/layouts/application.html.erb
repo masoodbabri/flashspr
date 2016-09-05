@@ -8,12 +8,19 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
-  <body >
+
+<% if user_signed_in? %>
+   <body class="loggedin">
+ <% else %>
+    <body>
+ <% end %>
     <header>
 
-      <nav class="navbar navbar-default ">
+      <nav id="mainnav" class="navbar navbar-default navbar-fixed-top ">
         <div class="container">
-          <ul class="nav navbar-nav"> <li class="active"><a href="#" > <span class="glyphicon glyphicon-home"></span>Home</a></li> <li><a href="#"><span  class="glyphicon glyphicon-user"></span> Update Profile</a></li> <li><a href="#" > <span class="glyphicon glyphicon-star"></span>Send/View Kudos</a></li> <li><a href="#"> <span class="glyphicon glyphicon-th-list"></span> Admin</a></li></ul>
+        <ul class="nav logo"><a href="/"><li></li> </ul></a>
+          <ul class="nav navbar-nav"> 
+          <li><a href="#" > <span class="glyphicon glyphicon-home"></span>Home</a></li> <li><a href="#"><span  class="glyphicon glyphicon-user"></span> Update Profile</a></li> <li><a href="#" > <span class="glyphicon glyphicon-star"></span>Send/View Kudos</a></li> <li><a href="#"> <span class="glyphicon glyphicon-th-list"></span> Admin</a></li></ul>
         </div>
       </nav>
     </header>
@@ -32,7 +39,9 @@
     <%= yield %>
     </div>
     <footer>
-      <p>FlashSPR 2016</p>
+    <div class="container">
+      <p>FlashSPR © 2016.</p>
+      </div>
     </footer>
   </body>
 </html>

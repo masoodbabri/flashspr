@@ -25597,3 +25597,2394 @@ Completed 200 OK in 49ms (Views: 44.8ms | ActiveRecord: 1.0ms)
 >>>>>>> 0bb57103e910c3c86e68af9c6ea8824b1a8f1108
 
 
+Started GET "/" for ::1 at 2016-09-04 15:17:33 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (1.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.4ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (34.3ms)
+Completed 200 OK in 535ms (Views: 463.8ms | ActiveRecord: 16.2ms)
+
+
+Started GET "/staffs/1004" for ::1 at 2016-09-04 15:17:36 -0400
+Processing by StaffsController#show as HTML
+  Parameters: {"id"=>"1004"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 1004], ["LIMIT", 1]]
+  Rendering staffs/show.html.erb within layouts/application
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered staffs/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 39ms (Views: 32.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2016-09-04 15:17:38 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 55ms (Views: 51.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/staffs" for ::1 at 2016-09-04 15:17:40 -0400
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/_pager.html.erb (0.2ms)
+  Rendered staffs/_pager.html.erb (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 38ms (Views: 34.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/staffs" for ::1 at 2016-09-04 15:51:00 -0400
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/_pager.html.erb (0.2ms)
+  Rendered staffs/_pager.html.erb (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 53ms (Views: 49.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/staffs.json?keywords=ku&page=0" for ::1 at 2016-09-04 15:51:08 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"ku", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (1.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'ku%' OR lower(last_name) like 'ku%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 9ms (Views: 4.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2016-09-04 22:37:34 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 47ms (Views: 42.9ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2016-09-04 22:37:37 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"RNvQmDuhOmL8fPnrfMYdoKSG3PtO8isl5SlWGMxa+QmNXRQleEF0yKh2lQP1Zk8l94Z2rnGJZJbwaNDwpf3enw=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 286ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2016-09-04 22:37:37 -0400
+Processing by DashboardController#index as HTML
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-09-04 22:37:37 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 45ms (Views: 42.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-09-04 22:38:02 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"E4Vgf9BgRpIsnv6RKtOzuf9tQ5UN40y+cP57foqcw5VA8RDJ1ldpJ4qOwX8tt/uz4xH439Dt2vhuPEuv4Ngslw==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"E4Vgf9BgRpIsnv6RKtOzuf9tQ5UN40y+cP57foqcw5VA8RDJ1ldpJ4qOwX8tt/uz4xH439Dt2vhuPEuv4Ngslw==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 36ms (Views: 35.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-09-04 22:38:09 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OSCHp9IsRXuE/MeTZ/AzfKUktvtNhGhwMOHyxSsnWMpqVPcR1BtqziLs+H1glHt2uVgNsZCK/jYuI8IUQWO3yA==", "user"=>{"email"=>"nolawi.petros@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (4.1ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "sign_in_count" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["current_sign_in_at", 2016-09-05 02:38:09 UTC], ["sign_in_count", 2], ["updated_at", 2016-09-05 02:38:09 UTC], ["id", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 159ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/" for ::1 at 2016-09-04 22:38:09 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 29ms (Views: 25.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/staffs/1004" for ::1 at 2016-09-04 22:38:29 -0400
+Processing by StaffsController#show as HTML
+  Parameters: {"id"=>"1004"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 1004], ["LIMIT", 1]]
+  Rendering staffs/show.html.erb within layouts/application
+  [1m[36mKudo Load (0.2ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered staffs/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 32ms (Views: 26.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/staffs" for ::1 at 2016-09-04 22:38:34 -0400
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/_pager.html.erb (0.3ms)
+  Rendered staffs/_pager.html.erb (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 32ms (Views: 29.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/staffs.json?keywords=da&page=0" for ::1 at 2016-09-04 22:38:36 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"da", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.6ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'da%' OR lower(last_name) like 'da%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/staffs.json?keywords=dav&page=0" for ::1 at 2016-09-04 22:38:37 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"dav", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'dav%' OR lower(last_name) like 'dav%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/staffs.json?keywords=davi&page=0" for ::1 at 2016-09-04 22:38:37 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"davi", "page"=>"0"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'davi%' OR lower(last_name) like 'davi%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/staffs.json?keywords=davin&page=0" for ::1 at 2016-09-04 22:38:37 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"davin", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'davin%' OR lower(last_name) like 'davin%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/staffs.json?keywords=davi&page=0" for ::1 at 2016-09-04 22:38:38 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"davi", "page"=>"0"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.6ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'davi%' OR lower(last_name) like 'davi%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/staffs/788" for ::1 at 2016-09-04 22:39:01 -0400
+Processing by StaffsController#show as HTML
+  Parameters: {"id"=>"788"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 788], ["LIMIT", 1]]
+  Rendering staffs/show.html.erb within layouts/application
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 788]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered staffs/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 34ms (Views: 30.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/staffs" for ::1 at 2016-09-04 22:39:08 -0400
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/_pager.html.erb (0.3ms)
+  Rendered staffs/_pager.html.erb (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 48ms (Views: 44.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/staffs.json?keywords=da&page=0" for ::1 at 2016-09-04 22:39:12 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"da", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'da%' OR lower(last_name) like 'da%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 6ms (Views: 2.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/staffs.json?keywords=dav&page=0" for ::1 at 2016-09-04 22:39:19 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"dav", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'dav%' OR lower(last_name) like 'dav%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/staffs.json?keywords=davi&page=0" for ::1 at 2016-09-04 22:39:19 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"davi", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.6ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'davi%' OR lower(last_name) like 'davi%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 5ms (Views: 2.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/staffs.json?keywords=david&page=0" for ::1 at 2016-09-04 22:39:19 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"david", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'david%' OR lower(last_name) like 'david%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/staffs/1002" for ::1 at 2016-09-04 22:39:22 -0400
+Processing by StaffsController#show as HTML
+  Parameters: {"id"=>"1002"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 1002], ["LIMIT", 1]]
+  Rendering staffs/show.html.erb within layouts/application
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1002]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered staffs/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 43ms (Views: 38.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/staffs.json?keywords=ks&page=0" for ::1 at 2016-09-04 22:39:26 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"ks", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'ks%' OR lower(last_name) like 'ks%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/staffs/154" for ::1 at 2016-09-04 22:39:28 -0400
+Processing by StaffsController#show as HTML
+  Parameters: {"id"=>"154"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 154], ["LIMIT", 1]]
+  Rendering staffs/show.html.erb within layouts/application
+  [1m[36mKudo Load (0.2ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 154]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered staffs/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 39ms (Views: 35.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/staffs.json?keywords=an&page=0" for ::1 at 2016-09-04 22:39:34 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"an", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'an%' OR lower(last_name) like 'an%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/staffs.json?keywords=da&page=0" for ::1 at 2016-09-04 22:39:40 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"da", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.6ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'da%' OR lower(last_name) like 'da%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 6ms (Views: 2.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/staffs.json?keywords=dav&page=0" for ::1 at 2016-09-04 22:39:40 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"dav", "page"=>"0"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.6ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'dav%' OR lower(last_name) like 'dav%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 5ms (Views: 2.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/staffs.json?keywords=dave&page=0" for ::1 at 2016-09-04 22:39:40 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"dave", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'dave%' OR lower(last_name) like 'dave%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/staffs.json?keywords=dav&page=0" for ::1 at 2016-09-04 22:39:41 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"dav", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'dav%' OR lower(last_name) like 'dav%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 5ms (Views: 1.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/staffs/788" for ::1 at 2016-09-04 22:39:46 -0400
+Processing by StaffsController#show as HTML
+  Parameters: {"id"=>"788"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 788], ["LIMIT", 1]]
+  Rendering staffs/show.html.erb within layouts/application
+  [1m[36mKudo Load (0.2ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 788]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered staffs/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 41ms (Views: 37.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/staffs.json?keywords=ya&page=0" for ::1 at 2016-09-04 22:39:52 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"ya", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'ya%' OR lower(last_name) like 'ya%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 5ms (Views: 1.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/staffs/493/erstaff" for ::1 at 2016-09-04 22:39:59 -0400
+Processing by StaffsController#erstaff as HTML
+  Parameters: {"id"=>"493"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 493], ["LIMIT", 1]]
+  Rendering staffs/erstaff.html.erb within layouts/application
+  Rendered staffs/_curstaff.html.erb (1.7ms)
+  Rendered staffs/erstaff.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 45ms (Views: 36.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/staffs.json?keywords=wi&page=0" for ::1 at 2016-09-04 22:40:08 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"wi", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.6ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'wi%' OR lower(last_name) like 'wi%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/staffs/701/sndkudo" for ::1 at 2016-09-04 22:40:12 -0400
+Processing by StaffsController#sndkudo as HTML
+  Parameters: {"id"=>"701"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 701], ["LIMIT", 1]]
+  Rendering staffs/sndkudo.html.erb within layouts/application
+  Rendered staffs/_curstaff.html.erb (0.9ms)
+  Rendered kudos/_form.html.erb (17.1ms)
+  Rendered staffs/sndkudo.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 63ms (Views: 56.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for ::1 at 2016-09-04 22:40:27 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 39ms (Views: 35.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/staffs/new" for ::1 at 2016-09-04 22:40:31 -0400
+Processing by StaffsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering staffs/new.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (2.8ms)
+  Rendered staffs/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 45ms (Views: 40.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-09-05 13:05:27 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (8.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (1.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.5ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.1ms)
+  Rendered dashboard/index.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 127ms (Views: 87.0ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/" for ::1 at 2016-09-05 13:11:05 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.2ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 88ms (Views: 82.4ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2016-09-05 13:19:01 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"BahrZ/KuxHSpgD0FVfDfFAjA9yJy0jDa0yyRtDSjaQIXzrJuKNgRCZUKLpzrPaZ30OhY3xlfMCjJBnLR5zA5Xw=="}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 11ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2016-09-05 13:19:01 -0400
+Processing by DashboardController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-09-05 13:19:01 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 40ms (Views: 38.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-09-05 13:21:17 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 290ms (Views: 289.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-09-05 13:22:17 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "}": expected selector or at-rule, was "}"):
+    4:     <title>FlashSPR</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all' %>
+    8:     <%= javascript_include_tag 'application' %>
+    9:   </head>
+   10: 
+  
+app/assets/stylesheets/global.scss:13
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__441569678663434351_70236984237740'
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.6ms)
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (54.2ms)
+Started GET "/users/sign_in" for ::1 at 2016-09-05 13:22:26 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 68ms (Views: 67.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-09-05 13:23:01 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 30ms (Views: 28.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-09-05 13:23:35 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 61ms (Views: 60.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-09-05 13:23:37 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 43ms (Views: 42.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-09-05 13:27:07 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 72ms (Views: 71.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-09-05 13:27:47 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "    	float-right:": expected expression (e.g. 1px, bold), was "}"):
+    4:     <title>FlashSPR</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all' %>
+    8:     <%= javascript_include_tag 'application' %>
+    9:   </head>
+   10: 
+  
+app/assets/stylesheets/global.scss:19
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__441569678663434351_70236932235760'
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.1ms)
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (55.7ms)
+Started GET "/users/sign_in" for ::1 at 2016-09-05 13:28:24 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 62ms (Views: 60.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-09-05 13:28:51 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 64ms (Views: 63.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-09-05 13:38:42 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 40ms (Views: 38.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-09-05 13:55:17 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"igANU9lnttmUTZp6ZgY82ave7yvuCKGwuWX0FLvh2A6l8M0NMEVjSzQ8Uc4Htr+Stx0JjUoS9KRwZC7BtiMGTw==", "user"=>{"email"=>"nolawi.petros@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", 2016-09-05 17:55:17 UTC], ["last_sign_in_at", 2016-09-05 02:38:09 UTC], ["sign_in_count", 3], ["updated_at", 2016-09-05 17:55:17 UTC], ["id", 1]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 148ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/" for ::1 at 2016-09-05 13:55:17 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.8ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.4ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 40ms (Views: 28.7ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/" for ::1 at 2016-09-05 13:55:26 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 36ms (Views: 32.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2016-09-05 13:56:47 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.6ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 35ms (Views: 29.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2016-09-05 14:01:01 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.6ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 56ms (Views: 51.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2016-09-05 14:02:14 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 68ms (Views: 63.8ms | ActiveRecord: 0.9ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/images/logo.gif"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/images/logo.gif" for ::1 at 2016-09-05 14:02:33 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.gif"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered collection of /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [35 times] (8.0ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (68.9ms)
+Started GET "/images/logo.gif" for ::1 at 2016-09-05 14:02:40 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.gif"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered collection of /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [35 times] (7.9ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (74.1ms)
+  
+ActionController::RoutingError (No route matches [GET] "/assets/images/logo.gif"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/" for ::1 at 2016-09-05 14:05:29 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.4ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 62ms (Views: 58.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/images/logo.gif" for ::1 at 2016-09-05 14:05:29 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.gif"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered collection of /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [35 times] (12.0ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (92.1ms)
+Started GET "/images/log.gif" for ::1 at 2016-09-05 14:05:53 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/images/log.gif"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered collection of /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [35 times] (8.2ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (71.3ms)
+Started GET "/images/lo.gif" for ::1 at 2016-09-05 14:05:53 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/images/lo.gif"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered collection of /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [35 times] (7.5ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (70.1ms)
+Started GET "/images/l.gif" for ::1 at 2016-09-05 14:05:53 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/images/l.gif"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered collection of /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [35 times] (7.5ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (70.8ms)
+Started GET "/images/.gif" for ::1 at 2016-09-05 14:05:53 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/images/.gif"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered collection of /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [35 times] (6.8ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.8ms)
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (67.6ms)
+  
+ActionController::RoutingError (No route matches [GET] "/assets/images"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/assets"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/" for ::1 at 2016-09-05 14:07:06 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 32ms (Views: 28.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/images/logo.gif" for ::1 at 2016-09-05 14:07:06 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.gif"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered collection of /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [35 times] (10.6ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (85.8ms)
+Started GET "/images/logo.gif" for ::1 at 2016-09-05 14:07:20 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.gif"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered collection of /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [35 times] (7.9ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (74.2ms)
+  
+ActionController::RoutingError (No route matches [GET] "/assets/images/logo.gif"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/images/logo.gif" for ::1 at 2016-09-05 14:07:34 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.gif"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered collection of /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [35 times] (7.2ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (68.0ms)
+Started GET "/images/logo.gif" for ::1 at 2016-09-05 14:07:39 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.gif"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered collection of /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [35 times] (9.7ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (84.1ms)
+Started GET "/" for ::1 at 2016-09-05 14:07:42 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.2ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 32ms (Views: 28.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/images/logo.gif" for ::1 at 2016-09-05 14:07:42 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.gif"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered collection of /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [35 times] (7.9ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (71.3ms)
+Started GET "/images/logo.gif" for ::1 at 2016-09-05 14:10:41 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.gif"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered collection of /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [35 times] (7.9ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (78.7ms)
+Started GET "/" for ::1 at 2016-09-05 14:13:58 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (1.1ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.4ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 37ms (Views: 29.3ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/images/logo.gif" for ::1 at 2016-09-05 14:13:59 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.gif"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered collection of /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [35 times] (17.0ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (84.0ms)
+Started GET "/" for ::1 at 2016-09-05 14:15:42 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 32ms (Views: 28.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/images/logo.gif" for ::1 at 2016-09-05 14:15:43 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.gif"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered collection of /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [35 times] (10.8ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (88.8ms)
+Started GET "/" for ::1 at 2016-09-05 14:16:23 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.2ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 62ms (Views: 58.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/images/logo.gif" for ::1 at 2016-09-05 14:16:24 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.gif"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered collection of /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [35 times] (10.1ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (85.1ms)
+Started GET "/" for ::1 at 2016-09-05 14:18:32 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.2ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 64ms (Views: 59.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/images/logo.gif" for ::1 at 2016-09-05 14:18:33 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.gif"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered collection of /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [35 times] (10.7ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (89.8ms)
+  
+ActionController::RoutingError (No route matches [GET] "/assets/image_path('logo.gif')"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/" for ::1 at 2016-09-05 14:18:48 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.4ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 34ms (Views: 30.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/images/logo.gif" for ::1 at 2016-09-05 14:18:48 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.gif"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered collection of /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [35 times] (8.3ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  
+ActionController::RoutingError (No route matches [GET] "/assets/image_path('logo.gif')"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (81.2ms)
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/" for ::1 at 2016-09-05 14:18:58 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 33ms (Views: 29.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/images/logo.gif" for ::1 at 2016-09-05 14:18:58 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.gif"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered collection of /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [35 times] (8.7ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (81.4ms)
+  
+ActionController::RoutingError (No route matches [GET] "/assets/image_path('logo.gif')"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/" for ::1 at 2016-09-05 14:19:42 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.2ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 33ms (Views: 29.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/images/logo.gif" for ::1 at 2016-09-05 14:19:42 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.gif"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered collection of /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [35 times] (8.2ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (73.4ms)
+  
+ActionController::RoutingError (No route matches [GET] "/assets/image_path('logo.gif')"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/" for ::1 at 2016-09-05 14:20:21 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.2ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 61ms (Views: 56.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/images/logo.gif" for ::1 at 2016-09-05 14:20:21 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.gif"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered collection of /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [35 times] (10.8ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (83.9ms)
+  
+ActionController::RoutingError (No route matches [GET] "/assets/images('logo.gif')"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/" for ::1 at 2016-09-05 14:21:45 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.2ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 71ms (Views: 67.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/images/logo.gif" for ::1 at 2016-09-05 14:21:45 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.gif"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered collection of /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [35 times] (9.1ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (85.7ms)
+Started GET "/" for ::1 at 2016-09-05 14:22:29 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 66ms (Views: 60.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/images/logo.gif" for ::1 at 2016-09-05 14:22:30 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.gif"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered collection of /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [35 times] (10.6ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (86.0ms)
+Started GET "/" for ::1 at 2016-09-05 14:23:00 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 64ms (Views: 59.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/images/logo.gif" for ::1 at 2016-09-05 14:23:01 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.gif"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered collection of /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [35 times] (10.9ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (86.1ms)
+Started GET "/" for ::1 at 2016-09-05 14:23:29 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.4ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 64ms (Views: 60.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/images/logo.gif" for ::1 at 2016-09-05 14:23:30 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.gif"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered collection of /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [35 times] (10.5ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.7ms)
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (88.0ms)
+Started GET "/" for ::1 at 2016-09-05 14:23:47 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 36ms (Views: 31.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/images/logo.gif" for ::1 at 2016-09-05 14:23:47 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.gif"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered collection of /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [35 times] (9.0ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendering /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/C00427/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (75.2ms)
+Started GET "/" for ::1 at 2016-09-05 14:25:23 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 42ms (Views: 37.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2016-09-05 14:29:27 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.2ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 62ms (Views: 58.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2016-09-05 14:37:45 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.2ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 35ms (Views: 31.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2016-09-05 14:40:23 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.2ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 67ms (Views: 63.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2016-09-05 14:41:34 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 66ms (Views: 62.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2016-09-05 14:43:30 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 41ms (Views: 36.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2016-09-05 14:49:06 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.2ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 79ms (Views: 73.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2016-09-05 14:49:33 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.2ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.1ms)
+  Rendered dashboard/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 34ms (Views: 30.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2016-09-05 14:49:44 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.2ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 34ms (Views: 30.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2016-09-05 14:52:38 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 65ms (Views: 61.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2016-09-05 14:53:15 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.2ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 68ms (Views: 64.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2016-09-05 14:53:41 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 64ms (Views: 60.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2016-09-05 14:53:44 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.2ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 36ms (Views: 31.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2016-09-05 14:54:17 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.2ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 63ms (Views: 60.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2016-09-05 14:54:44 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.2ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 70ms (Views: 65.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2016-09-05 14:55:05 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "nolawi.petros@gmail.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1004]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 63ms (Views: 58.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/staffs" for ::1 at 2016-09-05 14:56:31 -0400
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/_pager.html.erb (0.2ms)
+  Rendered staffs/_pager.html.erb (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 74ms (Views: 69.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/staffs" for ::1 at 2016-09-05 14:56:55 -0400
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/_pager.html.erb (0.2ms)
+  Rendered staffs/_pager.html.erb (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 71ms (Views: 68.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/staffs" for ::1 at 2016-09-05 14:56:57 -0400
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/_pager.html.erb (0.2ms)
+  Rendered staffs/_pager.html.erb (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 40ms (Views: 37.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/staffs" for ::1 at 2016-09-05 14:58:20 -0400
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/_pager.html.erb (0.3ms)
+  Rendered staffs/_pager.html.erb (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 67ms (Views: 64.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/staffs" for ::1 at 2016-09-05 14:58:50 -0400
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/_pager.html.erb (0.2ms)
+  Rendered staffs/_pager.html.erb (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 65ms (Views: 61.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/staffs" for ::1 at 2016-09-05 14:59:21 -0400
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/_pager.html.erb (0.2ms)
+  Rendered staffs/_pager.html.erb (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 65ms (Views: 61.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/staffs" for ::1 at 2016-09-05 15:00:07 -0400
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/_pager.html.erb (0.2ms)
+  Rendered staffs/_pager.html.erb (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 67ms (Views: 64.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/staffs" for ::1 at 2016-09-05 15:01:52 -0400
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/_pager.html.erb (0.2ms)
+  Rendered staffs/_pager.html.erb (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 36ms (Views: 32.5ms | ActiveRecord: 0.4ms)
+
+
