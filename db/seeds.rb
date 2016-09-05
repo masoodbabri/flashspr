@@ -44,3 +44,9 @@ Staff.create(
     last_name: 'Hasbold',
     title: 'UI Dude',
     email: 'amirdash@yahoo.com')
+
+Staff.create(
+    first_name: 'Jonathan',
+    last_name: 'Bateman',
+    title: 'UI Dude',
+    email: 'jonathan@yahoo.com')

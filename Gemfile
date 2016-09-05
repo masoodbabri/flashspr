@@ -35,6 +35,7 @@ gem 'devise'
 gem 'bower-rails'
 gem 'faker'
 gem 'rest-client'
+gem 'pundit'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
