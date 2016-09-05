@@ -39,8 +39,9 @@
 
         <h5 class="pull-right"><a class="btn btn-primary btn-sm" ng-href="staffs/{{staff.id}}">Details</a></h5>
         <h5 class="pull-right"><a class="btn btn-primary btn-sm" ng-href="staffs/{{staff.id}}/sndkudo">Send Kudo</a></h5>
-        <h5 class="pull-right"><a class="btn btn-primary btn-sm" ng-href="staffs/{{staff.id}}/erstaff">Edit/Remove</a></h5>
-
+        <% if policy(:staff).erstaff? %>
+          <h5 class="pull-right"><a class="btn btn-primary btn-sm" ng-href="staffs/{{staff.id}}/erstaff">Edit/Remove</a></h5>
+        <% end %>
 
       </li>
     </ol>
