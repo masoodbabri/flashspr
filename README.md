@@ -59,3 +59,14 @@ Download postgrest enterprise dmg, and install first. Then move to the postgres 
 
 ## Setting Bundle Configs
 * http://stackoverflow.com/questions/5167829/how-can-i-pass-a-parameter-for-gem-installation-when-i-run-bundle-install
+
+
+## Capistrano
+Poseidon:flash-spr dsachdev$ bundle exec cap install
+mkdir -p config/deploy
+create config/deploy.rb
+create config/deploy/staging.rb
+create config/deploy/production.rb
+mkdir -p lib/capistrano/tasks
+create Capfile
+Capified
