@@ -1,9 +1,12 @@
 <%= form_for([@staff, @staff.kudos.build]) do |f| %>
     <p>
-      <%= f.label :Message %><br>
-      <%= f.text_area :message %>
+     <label for="inputEmail3" class="col-sm-2 control-label"><%= f.label :Message %></label>
+ 
+      <textarea class="form-control" rows="3"> </textarea>
+   
     </p>
     <p>
-      <%= f.submit 'submit', class: 'green ui button'%>
+    <a class="btn btn-primary btn-sm" href='<%= f.submit "submit"%>'>Submit</a>
+    
     </p>
 <% end %>
