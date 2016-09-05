@@ -47,3 +47,6 @@ Download postgrest enterprise dmg, and install first. Then move to the postgres 
 ## Node Install on RHEL 6
 * curl --silent --location https://rpm.nodesource.com/setup_4.x | bash -
 * yum install -y nodejs
+
+## Whitelisting the Dev Server
+* https://github.com/rails/web-console
