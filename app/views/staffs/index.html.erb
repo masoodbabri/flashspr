@@ -35,15 +35,18 @@
         <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
           {{ staff.first_name }} {{ staff.last_name }}
           <small>{{ staff.title }}</small>
+
         </h3>
        <p class="list-group-item-text">{{ staff.email }}</p>
-   <div class="btn-toolbar pull-right" role="toolbar">
-<a class="btn btn-primary btn-sm" ng-href="staffs/{{staff.id}}">Details</a>
-      <a class="btn btn-primary btn-sm" ng-href="staffs/{{staff.id}}/sndkudo">Send Kudo</a>
-       <a class="btn btn-primary btn-sm" ng-href="staffs/{{staff.id}}/erstaff">Edit/Remove</a>
-     
-  
-</div>
+               <div class="btn-toolbar pull-right" role="toolbar">
+                      <a class="btn btn-primary btn-sm" ng-href="staffs/{{staff.id}}">Details</a>
+                  <a class="btn btn-primary btn-sm" ng-href="staffs/{{staff.id}}/sndkudo">Send Kudo</a>
+                         <% if policy(:staff).erstaff? %>
+                   <a class="btn btn-primary btn-sm" ng-href="staffs/{{staff.id}}/erstaff">Edit/Remove</a>
+                     <% end %>
+              
+            </div>
+
 
 
       </li>

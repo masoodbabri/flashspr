@@ -1,5 +1,4 @@
 class KudosController < ApplicationController
-
   after_action only: :create do
     unless @skip_after_action
       url = APP_CONFIG['notification_rest_service_url']
@@ -13,7 +12,6 @@ class KudosController < ApplicationController
   end
 
   def create
-
     @staff = Staff.find(params[:staff_id])
     @kudo = @staff.kudos.create(
         sender: current_user.email,
@@ -24,12 +22,16 @@ class KudosController < ApplicationController
 
   def destroy
     @staff = Staff.find(params[:staff_id])
-    @kudo = @staff.kudos.find(params[:id])
-    @kudo.destroy
+    kudo = @staff.kudos.find(params[:id])
+    kudo.destroy
     redirect_to staff_path(@staff)
   end
 
+  def report
+  end
+
   private
+
   def kudo_params
     params.require(:kudo).permit(:sender, :message)
   end

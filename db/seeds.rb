@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+
+
 1_000.times do |i|
   Staff.create!(
       first_name: Faker::Name.first_name,
@@ -44,3 +47,24 @@ Staff.create(
     last_name: 'Hasbold',
     title: 'UI Dude',
     email: 'amirdash@yahoo.com')
+
+Staff.create(
+    first_name: 'Jonathan',
+    last_name: 'Bateman',
+    title: 'UI Dude',
+    email: 'jonathan@yahoo.com')
+
+Staff.create(
+    first_name: 'Big',
+    last_name: 'Boss-man',
+    title: 'Chief',
+    email: 'admin@innotac.com'
+  )
+
+User.create(
+  email: 'admin@innotac.com'
+  password: 'Password1!',
+  password_confirmation: 'Password1!',
+  created_at: Time.now,
+  role: 1
+  )

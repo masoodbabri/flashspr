@@ -12,7 +12,7 @@
 *.DS_Store
 =======
 /.idea/
-
+/log/
 
 
 # Used by dotenv library to load environment variables.

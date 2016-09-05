@@ -1,5 +1,6 @@
 class StaffsController < ApplicationController
   require 'rest-client'
+  after_action :verify_authorized, except: [:index, :show, :sndkudo]
 
   PAGE_SIZE = 10
 
@@ -32,10 +33,12 @@ class StaffsController < ApplicationController
 
   def new
     @staff = Staff.new
+    authorize @staff
   end
 
   def create
     @staff = Staff.new(staff_params)
+    authorize @staff
 
     if @staff.save
       redirect_to @staff
@@ -46,15 +49,17 @@ class StaffsController < ApplicationController
 
   def erstaff
     @staff = Staff.find(params[:id])
+    authorize @staff
   end
 
   def edit
     @staff = Staff.find(params[:id])
+    authorize @staff
   end
 
   def update
     @staff = Staff.find(params[:id])
-
+    authorize @staff
     if @staff.update(staff_params)
       redirect_to @staff
     else
@@ -63,9 +68,9 @@ class StaffsController < ApplicationController
   end
 
   def destroy
-    @staff = Staff.find(params[:id])
-    @staff.destroy
-
+    staff = Staff.find(params[:id])
+    authorize staff
+    staff.destroy
     redirect_to staffs_path
   end
 
