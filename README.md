@@ -55,3 +55,7 @@ Download postgrest enterprise dmg, and install first. Then move to the postgres 
 * http://stackoverflow.com/questions/31492372/unable-to-install-postgres-in-aws
 * https://forums.aws.amazon.com/thread.jspa?messageID=400055
 * http://stackoverflow.com/questions/4564117/sudo-gem-install-pg-wont-work
+
+
+## Setting Bundle Configs
+* http://stackoverflow.com/questions/5167829/how-can-i-pass-a-parameter-for-gem-installation-when-i-run-bundle-install
