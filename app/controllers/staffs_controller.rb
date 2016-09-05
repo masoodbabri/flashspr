@@ -69,5 +69,9 @@ class StaffsController < ApplicationController
     redirect_to staffs_path
   end
 
+  private
+  def staff_params
+    params.require(:staff).permit(:first_name, :last_name, :title, :email)
+  end
   
 end

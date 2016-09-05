@@ -4,7 +4,13 @@ defaults: &defaults
 development:
   <<: *defaults
 
+dev:
+  <<: *defaults
+
 test:
+  <<: *defaults
+
+preprod:
   <<: *defaults
 
 production:
