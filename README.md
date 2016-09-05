@@ -50,3 +50,8 @@ Download postgrest enterprise dmg, and install first. Then move to the postgres 
 
 ## Whitelisting the Dev Server
 * https://github.com/rails/web-console
+
+## PostGres with RDS
+* http://stackoverflow.com/questions/31492372/unable-to-install-postgres-in-aws
+* https://forums.aws.amazon.com/thread.jspa?messageID=400055
+* http://stackoverflow.com/questions/4564117/sudo-gem-install-pg-wont-work
