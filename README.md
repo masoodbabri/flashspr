@@ -35,7 +35,7 @@ Download postgrest enterprise dmg, and install first. Then move to the postgres 
 * service postgresql-9.5 initdb 
 * service postgresql-9.5 start
 * chkconfig postgresql-9.5 on
-* ssu - postgres
+* su - postgres
 * psql -U postgres
 * Need to update the authentication model: 
 * http://stackoverflow.com/questions/18664074/getting-error-peer-authentication-failed-for-user-postgres-when-trying-to-ge
