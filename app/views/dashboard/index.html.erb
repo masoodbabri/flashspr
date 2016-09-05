@@ -9,17 +9,9 @@
     <%= render @staff.kudos %>
   </ol>
 
-  <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "btn btn-primary btn-sm" %>
-  <%= link_to 'Show', staff_path(@staff), class: "btn btn-primary btn-sm" %>
-  <%= link_to "Send Kudos", staffs_path, class: "btn btn-primary btn-sm" %>
-
   <% if policy(@staff).erstaff? || policy(@staff).new? %>
     <h4> Admin Links</h4>
     <%= link_to "New Staff", new_staff_path, class: "btn btn-primary btn-sm" %>
     <%= link_to "Edit/Remove Staff", staffs_path, class: "btn btn-primary btn-sm" %>
   <% end %>
 </section>
-
-<p></p>
-<p>Rails Version:  <%= Rails.version %> - More to Come! <%= @staff.id %></p>
-<p><%= current_user.email %></p>
