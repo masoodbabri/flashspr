@@ -28,3 +28,11 @@ Download postgrest enterprise dmg, and install first. Then move to the postgres 
 ## Running the application locally
 * rails server
 
+## Postgres Install on RHEL 6
+* rpm -Uvh http://yum.postgresql.org/9.5/redhat/rhel-6-x86_64/pgdg-redhat95-9.5-2.noarch.rpm
+* yum install postgresql95-server postgresql95
+* yum install postgresql95 postgresql95-server postgresql95-libs postgresql95-contrib postgresql95-devel
+* Need to update the authentication model: 
+* http://stackoverflow.com/questions/18664074/getting-error-peer-authentication-failed-for-user-postgres-when-trying-to-ge
+* http://stackoverflow.com/questions/33951528/fatal-peer-authentication-failed-for-user-rails
+* The createuser command doesn't create the DB as it is supposed to - make sure to use quotes for UPPERCASE - CREATE DATABASE "flashSPR"
