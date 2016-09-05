@@ -23,7 +23,7 @@ module FlashSPR
     #configuration:
 
     #config.web_console.development_only = false
-    config.web_console.development_only = false
+    #config.web_console.development_only = false
 
   end
 end
