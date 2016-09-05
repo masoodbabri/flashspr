@@ -1,74 +1,106 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>FlashSPR</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>FlashSPR</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+</head>
 
 
 <% if user_signed_in? %>
-    <body class="loggedin">
+    <body class="loggedin container">
 <% else %>
-    <body>
+    <body class="home container">
 <% end %>
-    <header>
 
-      <nav id="mainnav" class="navbar navbar-default ">
-        <div class="container">
-        <ul class="nav logo"><a href="/"><li></li></a></ul>
-          <ul class="nav navbar-nav"> 
+  <header>
+    <nav id="mainnav" class="navbar navbar-default ">
+      <div class="container">
+
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <ul class="nav logo"><a href="/"></a><li></li> </ul>
+        </div>
+
+        <div class="collapse navbar-collapse" >
+          <ul class="nav navbar-nav">
             <li><a href="/" > <span class="glyphicon glyphicon-home"></span>Home</a></li>
 
-            <li>
-              <%=
-                link_to_if($curUserStaff.nil?, 'Home', root_path) do
-              %>
-                  <%= link_to edit_staff_path($curUserStaff) do %>
-                    <span  class="glyphicon glyphicon-user"></span>Update Profile
-                  <% end %>
-              <% end %>
-            </li>
-            <li><%= link_to staffs_path do %>
-                  <span class="glyphicon glyphicon-star"></span>Send/View Kudos
-                <% end %>
-            </li>
-            <li><%= link_to 'report#index' do %>
-                  <span class="glyphicon glyphicon-star"></span>Kudos Report
-              <% end %>
-            </li>
-            <li><a href="#">
-              <span class="glyphicon glyphicon-th-list"></span> Admin
-            </a></li>
-            <li><%= link_to destroy_user_session_path, method: :delete do %>
-                  <span class="glyphicon glyphicon-star"></span>Logut
-              <% end %>
-            </li>
 
+            <li>
+              <%= link_to staffs_path do %>
+                  <span class="glyphicon glyphicon-ok"></span>Send/View Kudos
+              <% end %>
+            </li>
+            <li>
+              <%= link_to report_index_path do %>
+                <span class="glyphicon glyphicon-stats"></span> Kudos Report
+              <% end %>
+            </li>
+            <li>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <span  class="glyphicon glyphicon-user"></span>Update Profile<span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <%= link_to_if($curUserStaff.nil?, 'Ignore', root_path) do %>
+                      <%= link_to 'Edit Profile', edit_staff_path($curUserStaff) %>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to "Change Password", edit_user_registration_path %>
+                </li>
+              </ul>
+
+            </li>
+            <li>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <span class="glyphicon glyphicon-th-list"></span> Admin <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li> <%= link_to "New Staff", new_staff_path, class: "" %> </li>
+                <li> <%= link_to "Edit/Remove Staff", staffs_path, class: "" %>  </li>
+              </ul>
+            </li>
+            <li>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                  <span class="glyphicon glyphicon-export"></span>Logout
+              <% end %>
+            </li>
           </ul>
         </div>
-      </nav>
-    </header>
-    <div class="container">
+      </div>
+    </nav>
+  </header>
+
+  <div class="section">
     <% if notice.present? %>
         <aside class="alert alert-info">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           <%= notice %>
         </aside>
     <% end %>
+
     <% if alert.present? %>
         <aside class="alert alert-danger">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           <%= alert %>
         </aside>
     <% end %>
 
     <%= yield %>
-    </div>
-    <footer class="">
-    <div class="container">
-      <p>FlashSPR © 2016.</p>
-      </div>
-    </footer>
-  </body>
+  </div>
+
+  <footer >
+    <p>FlashSPR © 2016.</p>
+  </footer>
+
+</body>
 </html>

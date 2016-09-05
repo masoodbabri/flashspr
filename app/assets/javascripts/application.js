@@ -17,4 +17,5 @@
 //= require highcharts
 //= require chartkick
 //= require bootstrap-sass-official
+//= require bootstrap-toggle
 //= require_tree .
