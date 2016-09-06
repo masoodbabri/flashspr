@@ -8,6 +8,22 @@
 # server 'db.example.com', user: 'deploy', roles: %w{db}
 server 'flash-dev-rails1', user: 'flash', roles: %w{app db web}
 
+namespace :deploy do
+  task :start do ; end
+  task :stop do ; end
+  task :restart, :roles => :app, :except => { :no_release => true } do
+    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+  end
+
+  desc "Installs required gems"
+  task :gems, :roles => :app do
+    run "cd #{current_path} && sudo rake gems:install RAILS_ENV=dev"
+  end
+  after "deploy:setup", "deploy:gems"
+
+  before "deploy", "deploy:web:disable"
+  after "deploy", "deploy:web:enable"
+end
 
 # role-based syntax
 # ==================

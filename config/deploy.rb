@@ -1,7 +1,7 @@
 # config valid only for current version of Capistrano
 lock '3.6.1'
 
-set :application, 'FLASH-SPR'
+set :application, 'flash'
 set :repo_url, 'git@github.com:dsachdev/flash-spr.git'
 
 
