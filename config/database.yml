@@ -19,7 +19,7 @@ default: &default
   encoding: unicode
   host: localhost
   username: flashSPR
-  password: acs
+  password: flashSPR
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -58,6 +58,9 @@ development:
 
 dev:
   <<: *default
+  username: flashSPR
+  password: ne14DevSPR
+  host: flashspr.csuqvhktfazj.us-east-1.rds.amazonaws.com
   database: flashSPR_dev
 
   # The specified database role being used to connect to postgres.

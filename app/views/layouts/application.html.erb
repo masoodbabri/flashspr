@@ -10,14 +10,22 @@
 
 
 <% if user_signed_in? %>
+<<<<<<< HEAD
    <body class="loggedin">
  <% else %>
     <body class="home">
  <% end %>
+=======
+    <body class="loggedin">
+<% else %>
+    <body>
+<% end %>
+>>>>>>> b62c00734e9c153fef3d3ef57675184f80f5e44a
     <header>
 
       <nav id="mainnav" class="navbar navbar-default ">
         <div class="container">
+<<<<<<< HEAD
             <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
@@ -35,6 +43,28 @@
 
           <li><a href="#" > <span class="glyphicon glyphicon-home"></span>Home</a></li> <li><a href="#"><span  class="glyphicon glyphicon-user"></span> Update Profile</a></li> <li><a href="#" > <span class="glyphicon glyphicon-star"></span>Send/View Kudos</a></li> <li><a href="#"> <span class="glyphicon glyphicon-th-list"></span> Admin</a></li></ul>
           </div>
+=======
+        <ul class="nav logo"><a href="/"><li></li></a></ul>
+          <ul class="nav navbar-nav"> 
+            <li><a href="/" > <span class="glyphicon glyphicon-home"></span>Home</a></li>
+            <li><%= link_to do %>
+                  <span  class="glyphicon glyphicon-user"></span>Update Profile
+                <% end %>
+            </li>
+            <li><%= link_to staffs_path do %>
+                  <span class="glyphicon glyphicon-star"></span>Send/View Kudos
+                <% end %>
+            </li>
+            <li><a href="#">
+              <span class="glyphicon glyphicon-th-list"></span> Admin
+            </a></li>
+            <li><%= link_to destroy_user_session_path, method: :delete do %>
+                  <span class="glyphicon glyphicon-star"></span>Logut
+              <% end %>
+            </li>
+
+          </ul>
+>>>>>>> b62c00734e9c153fef3d3ef57675184f80f5e44a
         </div>
       </nav>
     </header>
