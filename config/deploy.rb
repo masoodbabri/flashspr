@@ -2,7 +2,8 @@
 lock '3.6.1'
 
 # Change these
-server 'flash-dev-rails1', port: 22, roles: [:web, :app, :db], primary: true
+#server 'flash-dev-rails1', port: 22, roles: [:web, :app, :db], primary: true
+server 'flash-dev-rails1', user: 'flash', roles: %w{app db web}
 
 set :application, 'flash'
 set :repo_url, 'git@github.com:dsachdev/flash-spr.git'
