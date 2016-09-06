@@ -1,6 +1,9 @@
 # config valid only for current version of Capistrano
 lock '3.6.1'
 
+# Change these
+server 'server', port: 7171, roles: [:web, :app, :db], primary: true
+
 set :application, 'flash'
 set :repo_url, 'git@github.com:dsachdev/flash-spr.git'
 
@@ -79,17 +82,17 @@ namespace :puma do
   before :start, :make_dirs
 end
 
-#namespace :deploy do
-#  desc "Make sure local git is in sync with remote."
-#  task :check_revision do
-#    on roles(:app) do
-#      unless `git rev-parse HEAD` == `git rev-parse origin/master`
-#        puts "WARNING: HEAD is not the same as origin/master"
-#        puts "Run `git push` to sync changes."
-#        exit
-#      end
-#    end
-#  end
+namespace :deploy do
+  desc "Make sure local git is in sync with remote."
+  task :check_revision do
+    on roles(:app) do
+      unless `git rev-parse HEAD` == `git rev-parse origin/master`
+        puts "WARNING: HEAD is not the same as origin/master"
+        puts "Run `git push` to sync changes."
+        exit
+      end
+    end
+  end
 
   desc 'Initial Deploy'
   task :initial do
