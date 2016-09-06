@@ -62,6 +62,7 @@ Download postgrest enterprise dmg, and install first. Then move to the postgres 
 
 
 ## Capistrano
+<pre>
 Poseidon:flash-spr dsachdev$ bundle exec cap install
 mkdir -p config/deploy
 create config/deploy.rb
@@ -70,3 +71,11 @@ create config/deploy/production.rb
 mkdir -p lib/capistrano/tasks
 create Capfile
 Capified
+</pre>
+
+* Multiple Stages - http://stackoverflow.com/questions/17816835/set-application-name-on-stage-files-on-capistrano
+* http://ryaneschinger.com/blog/automated-rails-deployments-jenkins-capistrano/
+* https://coderwall.com/p/ttrhow/deploying-rails-app-using-nginx-puma-and-capistrano-3
+* https://www.digitalocean.com/community/tutorials/how-to-configure-the-nginx-web-server-on-a-virtual-private-server
+* http://stackoverflow.com/questions/17413526/nginx-missing-sites-available-directory
+* http://ruby-journal.com/how-to-setup-rails-app-with-puma-and-nginx/
