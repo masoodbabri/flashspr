@@ -1,0 +1,6 @@
+
+<h1>Kudos by Sender</h1>
+<%= bar_chart @allKudos.group(:sender).count %>
+
+<h1>Kudos by Receiver</h1>
+<%= pie_chart @allKudos.joins(:staff).group('staffs.email').count %>

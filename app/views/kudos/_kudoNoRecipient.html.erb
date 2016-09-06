@@ -1,0 +1,20 @@
+<% kudos.each do |kudo| %>
+    <li class="list-group-item clearfix">
+      <h2 class="h3" >
+        <small class="text-uppercase">Sender:</small>
+        <%= kudo.sender %>
+      </h2>
+
+      <h3 class="h5 pull-right">
+        <%= link_to 'Destroy Kudo', [kudo.staff, kudo], class: 'btn btn-primary btn-sm',
+                    method: :delete,
+                    data: { confirm: 'Are you sure?' } %>
+      </h3>
+
+      <h2 class="h3">
+        <small class="text-uppercase">Message:</small>
+        <small><%= kudo.message %></small>
+      </h2>
+
+    </li>
+<% end %>

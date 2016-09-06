@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'dashboard#index'
 
+  resources :report
 
   devise_scope :user do
     resources :staffs do
