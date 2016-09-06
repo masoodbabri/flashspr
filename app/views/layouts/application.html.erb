@@ -8,7 +8,40 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
-  <body class="container">
+
+<% if user_signed_in? %>
+    <body class="loggedin">
+<% else %>
+    <body>
+<% end %>
+    <header>
+
+      <nav id="mainnav" class="navbar navbar-default ">
+        <div class="container">
+        <ul class="nav logo"><a href="/"><li></li></a></ul>
+          <ul class="nav navbar-nav"> 
+            <li><a href="/" > <span class="glyphicon glyphicon-home"></span>Home</a></li>
+            <li><%= link_to edit_staff_path($curUserStaff) do %>
+                  <span  class="glyphicon glyphicon-user"></span>Update Profile
+                <% end %>
+            </li>
+            <li><%= link_to staffs_path do %>
+                  <span class="glyphicon glyphicon-star"></span>Send/View Kudos
+                <% end %>
+            </li>
+            <li><a href="#">
+              <span class="glyphicon glyphicon-th-list"></span> Admin
+            </a></li>
+            <li><%= link_to destroy_user_session_path, method: :delete do %>
+                  <span class="glyphicon glyphicon-star"></span>Logut
+              <% end %>
+            </li>
+
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div class="container">
     <% if notice.present? %>
         <aside class="alert alert-info">
           <%= notice %>
@@ -21,5 +54,11 @@
     <% end %>
 
     <%= yield %>
+    </div>
+    <footer class="">
+    <div class="container">
+      <p>FlashSPR © 2016.</p>
+      </div>
+    </footer>
   </body>
 </html>

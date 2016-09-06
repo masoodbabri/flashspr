@@ -6,6 +6,7 @@ development:
 
 dev:
   <<: *defaults
+  notification_rest_service_url: http://flash-dev-java1:8080/notify
 
 test:
   <<: *defaults

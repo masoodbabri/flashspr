@@ -9,8 +9,12 @@
 /test/tmp/
 /test/version_tmp/
 /tmp/
+/log/
+*.DS_Store
+=======
 /.idea/
 /log/
+
 
 # Used by dotenv library to load environment variables.
 # .env
