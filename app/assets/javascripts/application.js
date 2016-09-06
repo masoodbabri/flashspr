@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require angular
 //= require angular-route
+//= require bootstrap-sass-official
+//= require bootstrap-toggle
 //= require_tree .
