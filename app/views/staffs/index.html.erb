@@ -27,21 +27,26 @@
     <ol class="list-group">
       <li class="list-group-item clearfix"
           ng-repeat="staff in staffs">
-        <h3 class="pull-right">
+        <h4 class="pull-right">
           <small class="text-uppercase">Joined</small>
           {{ staff.created_at | date }}
-        </h3>
-        <h2 class="h3">
+        </h4>
+        <h3 class="list-group-item-heading">
+        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
           {{ staff.first_name }} {{ staff.last_name }}
           <small>{{ staff.title }}</small>
-        </h2>
-        <h4>{{ staff.email }}</h4>
+        </h3>
+       <p class="list-group-item-text">{{ staff.email }}</p>
+               <div class="btn-toolbar pull-right" role="toolbar">
+                      <a class="btn btn-primary btn-sm" ng-href="staffs/{{staff.id}}">Details</a>
+                  <a class="btn btn-primary btn-sm" ng-href="staffs/{{staff.id}}/sndkudo">Send Kudo</a>
+                         <% if policy(:staff).erstaff? %>
+                   <a class="btn btn-primary btn-sm" ng-href="staffs/{{staff.id}}/erstaff">Edit/Remove</a>
+                     <% end %>
+              
+            </div>
 
-        <h5 class="pull-right"><a class="btn btn-primary btn-sm" ng-href="staffs/{{staff.id}}">Details</a></h5>
-        <h5 class="pull-right"><a class="btn btn-primary btn-sm" ng-href="staffs/{{staff.id}}/sndkudo">Send Kudo</a></h5>
-        <% if policy(:staff).erstaff? %>
-          <h5 class="pull-right"><a class="btn btn-primary btn-sm" ng-href="staffs/{{staff.id}}/erstaff">Edit/Remove</a></h5>
-        <% end %>
+
 
       </li>
     </ol>
@@ -50,4 +55,3 @@
   </section>
 </article>
 <p></p>
-<%= link_to 'Home', root_path, class: "btn btn-primary btn-sm" %>

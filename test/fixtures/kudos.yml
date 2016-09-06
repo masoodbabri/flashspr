@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  sender: MyString
-  message: MyText
+  sender: email1@example.gov
+  message: MyText1
   staff: one
 
 two:
-  sender: MyString
-  message: MyText
+  sender: email2@example.gov
+  message: MyText2
   staff: two

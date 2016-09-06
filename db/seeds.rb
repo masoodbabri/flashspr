@@ -62,7 +62,7 @@ Staff.create(
   )
 
 User.create(
-  email: 'admin@innotac.com'
+  email: 'admin@innotac.com',
   password: 'Password1!',
   password_confirmation: 'Password1!',
   created_at: Time.now,
