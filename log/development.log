@@ -1,0 +1,125 @@
+Started GET "/" for 127.0.0.1 at 2016-09-07 01:53:51 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.7ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "an@innotac.com"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "an@innotac.com"], ["LIMIT", 1]]
+  [1m[36mKudo Load (0.5ms)[0m  [1m[34mSELECT  "kudos".* FROM "kudos" ORDER BY "kudos"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.4ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 6002]]
+  Rendered kudos/_kudoNoRecipient.html.erb (10.8ms)
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6004], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6004], ["LIMIT", 1]]
+  Rendered collection of kudos/_kudo.html.erb [5 times] (5.4ms)
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."sender" = $1[0m  [["sender", "an@innotac.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6004], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6004], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6004], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6004], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6004], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  Rendered kudos/_kudoNoSender.html.erb (17.1ms)
+  Rendered dashboard/index.html.erb within layouts/application (49.8ms)
+Completed 200 OK in 411ms (Views: 333.6ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-09-07 01:53:58 -0400
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/_pager.html.erb (0.2ms)
+  Rendered staffs/_pager.html.erb (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 74ms (Views: 69.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/report" for 127.0.0.1 at 2016-09-07 01:54:00 -0400
+Processing by ReportController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering report/index.html.erb within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "kudos"."sender" AS kudos_sender FROM "kudos" GROUP BY "kudos"."sender"[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, staffs.email AS staffs_email FROM "kudos" INNER JOIN "staffs" ON "staffs"."id" = "kudos"."staff_id" GROUP BY staffs.email[0m
+  Rendered report/index.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 87ms (Views: 79.1ms | ActiveRecord: 3.7ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-09-07 01:54:10 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7tlaAIqSiCvHzQLQ6v++yuSCwgGStpI1c2FbHkf+UlBrtF5zxFZ+KLucFMeJmNKRzeEQHsOrVovZf6zUHQvdzQ=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 460ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-07 01:54:11 -0400
+Processing by DashboardController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-09-07 01:54:11 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (7.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 76ms (Views: 73.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-09-07 01:54:20 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3zyBy0ZcbkAR90ePKly3YA3OdQWkfPF1pKIQpJhBY1PsOgJYtvNFcdAOer0rjib8iLT+cu6fepNiYqTu91T06w==", "user"=>{"email"=>"an@innotac.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "an@innotac.com"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", 2016-09-07 05:54:20 UTC], ["last_sign_in_at", 2016-09-07 05:45:38 UTC], ["sign_in_count", 55], ["updated_at", 2016-09-07 05:54:20 UTC], ["id", 1]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 158ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-07 01:54:20 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.7ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "an@innotac.com"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "an@innotac.com"], ["LIMIT", 1]]
+  [1m[36mKudo Load (0.4ms)[0m  [1m[34mSELECT  "kudos".* FROM "kudos" ORDER BY "kudos"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 6002]]
+  Rendered kudos/_kudoNoRecipient.html.erb (3.4ms)
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6004], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6004], ["LIMIT", 1]]
+  Rendered collection of kudos/_kudo.html.erb [5 times] (5.1ms)
+  [1m[36mKudo Load (0.6ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."sender" = $1[0m  [["sender", "an@innotac.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6004], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6004], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6004], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6004], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6004], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  Rendered kudos/_kudoNoSender.html.erb (14.7ms)
+  Rendered dashboard/index.html.erb within layouts/application (30.4ms)
+Completed 200 OK in 91ms (Views: 80.6ms | ActiveRecord: 4.4ms)
+
+
