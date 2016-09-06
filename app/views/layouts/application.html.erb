@@ -37,9 +37,15 @@
 
           <ul class="nav navbar-nav"> 
             <li><a href="/" > <span class="glyphicon glyphicon-home"></span>Home</a></li>
-            <li><%= link_to do %>
-                  <span  class="glyphicon glyphicon-user"></span>Update Profile
-                <% end %>
+
+            <li>
+              <%=
+                link_to_if($curUserStaff.nil?, 'Home', root_path) do
+              %>
+                  <%= link_to edit_staff_path($curUserStaff) do %>
+                    <span  class="glyphicon glyphicon-user"></span>Update Profile
+                  <% end %>
+              <% end %>
             </li>
             <li><%= link_to staffs_path do %>
                   <span class="glyphicon glyphicon-star"></span>Send/View Kudos
