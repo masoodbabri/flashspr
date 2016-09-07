@@ -1,10 +1,15 @@
+
 body.loggedin {
+
+      background: #f9f9f9 url(image_path('body_bg.png')) repeat-x;
   ul.nav.navbar-nav {
     display: block
   }
   .section {
     border: 1px solid #c6e7f3;
     padding:20px 50px;
+    background: #fff;
+    box-shadow:0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 4px 7px 0 rgba(0, 0, 0, 0.1)
   }
 }
 body.home {
@@ -46,6 +51,7 @@ ul.nav.navbar-nav {
   border-color: #c6e7f3 ;
   margin-bottom: 30px ;
     border-radius: 0;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 4px 7px 0 rgba(0, 0, 0, 0.1)
 }
 
 ul.nav.logo {
@@ -207,7 +213,7 @@ ul.nav.logo {
 
 footer {
 
-
+  box-shadow:0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 4px 7px 0 rgba(0, 0, 0, 0.1);
 
   height: 60px;
   background-color: #e9f2f5 !important;
