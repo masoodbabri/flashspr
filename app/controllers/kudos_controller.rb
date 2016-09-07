@@ -1,4 +1,5 @@
 class KudosController < ApplicationController
+  after_action :verify_authorized, only: [ :destroy ]
   after_action only: :create do
     unless @skip_after_action
       url = APP_CONFIG['notification_rest_service_url']
@@ -23,6 +24,7 @@ class KudosController < ApplicationController
   def destroy
     @staff = Staff.find(params[:staff_id])
     kudo = @staff.kudos.find(params[:id])
+    authorize kudo
     kudo.destroy
     redirect_to staff_path(@staff)
   end
