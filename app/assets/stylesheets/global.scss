@@ -12,18 +12,24 @@ body.home {
     max-width: 330px;
     padding: 15px;
     margin: 0 auto;
-
     background-color: #eee;
     border-color: #eee ;
+        overflow-x: hidden;
 
     .logo li {
       background-size: 100%;
       padding: 46px 93px 39px 22px;
       margin-left: 47px;
     }
+
+
   }
 
 }
+.home footer {
+      display: none !important;
+    }
+
 .nav a span.glyphicon {
   padding: 1px 4px 0 0;
   display: inline-block;
