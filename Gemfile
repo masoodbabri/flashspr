@@ -37,6 +37,8 @@ gem 'faker'
 gem 'rest-client'
 gem 'pundit'
 gem 'chartkick'
+gem 'brakeman'
+gem 'rubocop'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
