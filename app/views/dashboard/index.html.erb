@@ -1,13 +1,30 @@
 <header>
   <h1>FLASH Staff Performance and Recognition</h1>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </header>
 <section>
+  <div class="container">
+    <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="#mykudos">My Kudos</a></li>
+      <li><a data-toggle="tab" href="#sntkudos">Sent Kudos</a></li>
+    </ul>
 
+    <div class="tab-content">
+      <div id="mykudos" class="tab-pane fade in active">
+        <h2><%= @staff.first_name %> <%= @staff.last_name %>'s Kudos</h2>
+        <ol class="list-group">
+          <%= render partial: "kudos/kudoNoRecipient", locals: {kudos: @staff.kudos} %>
+        </ol>
+      </div>
+      <div id="sntkudos" class="tab-pane fade">
+        <h2>Kudos Sent by Me</h2>
+        <ol class="list-group">
+          <%= render @sentKudos %>
+        </ol>
+      </div>
 
-  <h2><%= @staff.first_name %> <%= @staff.last_name %>'s Kudos</h2>
-  <ol class="list-group">
-    <%= render @staff.kudos %>
-  </ol>
+    </div>
 
   <% if policy(@staff).erstaff? || policy(@staff).new? %>
     <h4> Admin Links</h4>
