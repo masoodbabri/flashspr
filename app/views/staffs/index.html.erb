@@ -17,7 +17,7 @@
     <span ng-if="loading" class="loading">Loading</span>
     <span ng-if="!loading" class="not-loading">Done Loading</span>
   </aside>
-  <section class="search-results" ng-if="staffs.length > 0">
+  <section class="search-results" ng-if="staffs.length > 0" ng-cloak>
     <header>
       <h1 class="h3">Results</h1>
     </header>
@@ -38,14 +38,14 @@
 
         </h3>
        <p class="list-group-item-text">{{ staff.email }}</p>
-               <div class="btn-toolbar pull-right" role="toolbar">
-                      <a class="btn btn-primary btn-sm" ng-href="staffs/{{staff.id}}">Details</a>
-                  <a class="btn btn-primary btn-sm" ng-href="staffs/{{staff.id}}/sndkudo">Send Kudo</a>
-                         <% if policy(:staff).erstaff? %>
-                   <a class="btn btn-primary btn-sm" ng-href="staffs/{{staff.id}}/erstaff">Edit/Remove</a>
-                     <% end %>
-              
-            </div>
+       <div class="btn-toolbar pull-right" role="toolbar">
+         <a class="btn btn-primary btn-sm" ng-href="staffs/{{staff.id}}">Details</a>
+         <a class="btn btn-primary btn-sm" ng-href="staffs/{{staff.id}}/sndkudo">Send Kudo</a>
+         <% if policy(:staff).erstaff? %>
+           <a class="btn btn-primary btn-sm" ng-href="staffs/{{staff.id}}/erstaff">Edit/Remove</a>
+         <% end %>
+
+       </div>
 
 
 
