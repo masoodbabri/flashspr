@@ -1,11 +1,11 @@
-<div class="h5 pull-right">
-  <%= link_to 'Destroy Kudo', [kudo.staff, kudo], class: 'btn btn-primary btn-sm',
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %>
-</div>
 
-<div class="well col-md-10">
+<div class="well col-md-10 ">
 
   <p><strong class="text-uppercase">Message:</strong><%= kudo.message %></p>
   </div>
 
+<div class="h5 col-md-2">
+  <%= link_to 'Delete Kudo', [kudo.staff, kudo], class: 'btn btn-primary btn-sm',
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+</div>
