@@ -14,27 +14,54 @@
         </div>
     <% end %>
 
-    <p>
-      <%= f.label :First_Name %><br>
-      <%= f.text_field :first_name %>
-    </p>
-    
-    <p>
-      <%= f.label :Last_Name %><br>
-      <%= f.text_field :last_name %>
-    </p>
+<form class="form-horizontal">
+<fieldset>
 
-    <p>
-      <%= f.label :Title %><br>
-      <%= f.text_field :title %>
-    </p>
-    
-    <p>
-      <%= f.label :Email %><br>
-      <%= f.text_field :email %>
-    </p>
+<!-- Form Name -->
+<legend>Edit Staff Member</legend>
 
-    <p>
-      <%= f.submit 'submit', class: 'btn btn-primary btn-sm' %>
-    </p>
+<!-- Text input-->
+<div class="form-group col-md-6">
+ 
+  <%= f.label :First_Name,  class: 'col-md-4  control-label'%>
+  <div class="col-md-8">
+
+    <%= f.text_field :first_name , class: 'form-control input-md' , placeholder: 'First Name' %>
+    
+  </div>
+</div>
+<div class="form-group col-md-6">
+  <%= f.label :Last_Name,  class: 'col-md-4  control-label'%>
+  <div class="col-md-8">
+ 
+      <%= f.text_field :last_name , class: 'form-control input-md' , placeholder: 'Last Name' %>
+    
+  </div>
+</div>
+<div class="form-group col-md-6">
+   <%= f.label :Title,  class: 'col-md-4  control-label'%>
+  <div class="col-md-8">
+      <%= f.text_field :title , class: 'form-control input-md' , placeholder: 'Last Name' %>    
+  </div>
+</div>
+<div class="form-group col-md-6">
+   <%= f.label :Email,  class: 'col-md-4  control-label'%>
+  <div class="col-md-8">
+    <%= f.text_field :email , class: 'form-control input-md' , placeholder: 'Last Name' %>  
+
+    
+  </div>
+</div>
+
+      <%= f.submit 'submit', class: 'btn btn-primary btn-md pull-righ' %>
+
+</fieldset>
+</form>
+
+
+
+
+    
 <% end %>
+
+
