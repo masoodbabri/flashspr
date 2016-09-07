@@ -97,6 +97,9 @@ dev:
 test:
   <<: *default
   database: flashSPR_test
+  username: flashSPR
+  password: ne14TestSPR
+  host: flashspr-test.csuqvhktfazj.us-east-1.rds.amazonaws.com
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -121,11 +124,17 @@ preprod:
   <<: *default
   database: flashSPR_preprod
   username: flashSPR
-  password: <%= ENV['FLASHSPR_DATABASE_PASSWORD'] %>
+  #password: <%= ENV['FLASHSPR_DATABASE_PASSWORD'] %>
+  username: flashSPR
+  password: ne14PreprodSPR
+  host: flashspr-preprod.csuqvhktfazj.us-east-1.rds.amazonaws.com
 
 
 production:
   <<: *default
-  database: flashSPR_production
+  database: flashSPR_prod
   username: flashSPR
-  password: <%= ENV['FLASHSPR_DATABASE_PASSWORD'] %>
+  #password: <%= ENV['FLASHSPR_DATABASE_PASSWORD'] %>
+  username: flashSPR
+  password: ne14ProdSPR
+  host: flashspr-prod.csuqvhktfazj.us-east-1.rds.amazonaws.com
