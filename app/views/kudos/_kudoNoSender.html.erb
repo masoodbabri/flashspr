@@ -9,16 +9,6 @@
       <strong><small class="text-uppercase">Recipient:</small></strong>
       <%= kudo.staff.email %>
 
-      <h3 class="h5 pull-right">
-        <%= link_to 'Destroy Kudo', [kudo.staff, kudo], class: 'btn btn-primary btn-sm',
-                    method: :delete,
-                    data: { confirm: 'Are you sure?' } %>
-      </h3>
-
-      <h2 class="h3">
-        <small class="text-uppercase">Message:</small>
-        <small><%= kudo.message %></small>
-      </h2>
-
+      <%= render partial: "kudos/kudoMessage", locals: {kudo: kudo} %>
     </li>
 <% end %>
