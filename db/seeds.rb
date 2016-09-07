@@ -8,7 +8,6 @@
 
 
 
-
 1_000.times do |i|
   Staff.create!(
       first_name: Faker::Name.first_name,
