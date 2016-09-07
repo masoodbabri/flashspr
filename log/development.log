@@ -1704,3 +1704,477 @@ Processing by ReportController#index as HTML
 Completed 200 OK in 74ms (Views: 59.6ms | ActiveRecord: 7.5ms)
 
 
+Started GET "/staffs" for ::1 at 2016-09-06 20:24:34 -0400
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/_pager.html.erb (0.6ms)
+  Rendered staffs/_pager.html.erb (0.1ms)
+  Rendered staffs/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 41ms (Views: 37.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/staffs.json?keywords=no&page=0" for ::1 at 2016-09-06 20:24:37 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"no", "page"=>"0"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.6ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'no%' OR lower(last_name) like 'no%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 6ms (Views: 3.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/staffs.json?keywords=nol&page=0" for ::1 at 2016-09-06 20:24:37 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"nol", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.6ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'nol%' OR lower(last_name) like 'nol%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 5ms (Views: 1.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/staffs.json?keywords=nola&page=0" for ::1 at 2016-09-06 20:24:37 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"nola", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.6ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'nola%' OR lower(last_name) like 'nola%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/staffs.json?keywords=nolaw&page=0" for ::1 at 2016-09-06 20:24:37 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"nolaw", "page"=>"0"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'nolaw%' OR lower(last_name) like 'nolaw%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/staffs" for ::1 at 2016-09-06 20:24:43 -0400
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/_pager.html.erb (0.4ms)
+  Rendered staffs/_pager.html.erb (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 41ms (Views: 38.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/staffs/1004/edit" for ::1 at 2016-09-06 20:24:46 -0400
+Processing by StaffsController#edit as HTML
+  Parameters: {"id"=>"1004"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 1004], ["LIMIT", 1]]
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (2.9ms)
+  Rendered staffs/edit.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 46ms (Views: 42.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/staffs/1004/edit" for ::1 at 2016-09-06 20:30:30 -0400
+Processing by StaffsController#edit as HTML
+  Parameters: {"id"=>"1004"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.1ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 1004], ["LIMIT", 1]]
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (2.6ms)
+  Rendered staffs/edit.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 54ms (Views: 50.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/staffs/1004/edit" for ::1 at 2016-09-06 20:31:56 -0400
+Processing by StaffsController#edit as HTML
+  Parameters: {"id"=>"1004"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 1004], ["LIMIT", 1]]
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (2.6ms)
+  Rendered staffs/edit.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 54ms (Views: 50.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/staffs/1004/edit" for ::1 at 2016-09-06 20:33:04 -0400
+Processing by StaffsController#edit as HTML
+  Parameters: {"id"=>"1004"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 1004], ["LIMIT", 1]]
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (2.3ms)
+  Rendered staffs/edit.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 39ms (Views: 35.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/staffs/1004/edit" for ::1 at 2016-09-06 20:33:11 -0400
+Processing by StaffsController#edit as HTML
+  Parameters: {"id"=>"1004"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 1004], ["LIMIT", 1]]
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (2.1ms)
+  Rendered staffs/edit.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 47ms (Views: 43.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/staffs/1004/edit" for ::1 at 2016-09-06 20:33:23 -0400
+Processing by StaffsController#edit as HTML
+  Parameters: {"id"=>"1004"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 1004], ["LIMIT", 1]]
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (2.1ms)
+  Rendered staffs/edit.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 39ms (Views: 35.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/staffs/1004/edit" for ::1 at 2016-09-06 20:33:25 -0400
+Processing by StaffsController#edit as HTML
+  Parameters: {"id"=>"1004"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 1004], ["LIMIT", 1]]
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (2.0ms)
+  Rendered staffs/edit.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 36ms (Views: 33.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/staffs/1004/edit" for ::1 at 2016-09-06 20:34:20 -0400
+Processing by StaffsController#edit as HTML
+  Parameters: {"id"=>"1004"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 1004], ["LIMIT", 1]]
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (2.2ms)
+  Rendered staffs/edit.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 54ms (Views: 51.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/staffs/1004/edit" for ::1 at 2016-09-06 20:34:47 -0400
+Processing by StaffsController#edit as HTML
+  Parameters: {"id"=>"1004"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 1004], ["LIMIT", 1]]
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (2.2ms)
+  Rendered staffs/edit.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 41ms (Views: 37.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/staffs/1004/edit" for ::1 at 2016-09-06 20:35:43 -0400
+Processing by StaffsController#edit as HTML
+  Parameters: {"id"=>"1004"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 1004], ["LIMIT", 1]]
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (3.0ms)
+  Rendered staffs/edit.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 41ms (Views: 37.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/staffs/1004/edit" for ::1 at 2016-09-06 20:36:14 -0400
+Processing by StaffsController#edit as HTML
+  Parameters: {"id"=>"1004"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 1004], ["LIMIT", 1]]
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (2.1ms)
+  Rendered staffs/edit.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 40ms (Views: 37.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/staffs/1004/edit" for ::1 at 2016-09-06 20:37:26 -0400
+Processing by StaffsController#edit as HTML
+  Parameters: {"id"=>"1004"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 1004], ["LIMIT", 1]]
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (2.1ms)
+  Rendered staffs/edit.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 38ms (Views: 34.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/staffs/1004/edit" for ::1 at 2016-09-06 20:37:37 -0400
+Processing by StaffsController#edit as HTML
+  Parameters: {"id"=>"1004"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 1004], ["LIMIT", 1]]
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (2.9ms)
+  Rendered staffs/edit.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 56ms (Views: 52.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/staffs/1004/edit" for ::1 at 2016-09-06 20:38:48 -0400
+Processing by StaffsController#edit as HTML
+  Parameters: {"id"=>"1004"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 1004], ["LIMIT", 1]]
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (2.2ms)
+  Rendered staffs/edit.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 37ms (Views: 33.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/staffs/1004/edit" for ::1 at 2016-09-06 20:39:01 -0400
+Processing by StaffsController#edit as HTML
+  Parameters: {"id"=>"1004"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 1004], ["LIMIT", 1]]
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (3.2ms)
+  Rendered staffs/edit.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 39ms (Views: 35.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/staffs/1004/edit" for ::1 at 2016-09-06 20:40:21 -0400
+Processing by StaffsController#edit as HTML
+  Parameters: {"id"=>"1004"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 1004], ["LIMIT", 1]]
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (2.5ms)
+  Rendered staffs/edit.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 37ms (Views: 33.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/staffs/1004/edit" for ::1 at 2016-09-06 20:41:14 -0400
+Processing by StaffsController#edit as HTML
+  Parameters: {"id"=>"1004"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 1004], ["LIMIT", 1]]
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (3.1ms)
+  Rendered staffs/edit.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 39ms (Views: 35.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/staffs/1004/edit" for ::1 at 2016-09-06 20:42:32 -0400
+Processing by StaffsController#edit as HTML
+  Parameters: {"id"=>"1004"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 1004], ["LIMIT", 1]]
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (3.0ms)
+  Rendered staffs/edit.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 55ms (Views: 50.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/staffs/1004/edit" for ::1 at 2016-09-06 20:43:46 -0400
+Processing by StaffsController#edit as HTML
+  Parameters: {"id"=>"1004"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 1004], ["LIMIT", 1]]
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (5.5ms)
+  Rendered staffs/edit.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 47ms (Views: 42.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/staffs/1004/edit" for ::1 at 2016-09-06 20:43:54 -0400
+Processing by StaffsController#edit as HTML
+  Parameters: {"id"=>"1004"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 1004], ["LIMIT", 1]]
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (4.1ms)
+  Rendered staffs/edit.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 41ms (Views: 37.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/staffs/1004/edit" for ::1 at 2016-09-06 20:44:24 -0400
+Processing by StaffsController#edit as HTML
+  Parameters: {"id"=>"1004"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 1004], ["LIMIT", 1]]
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (2.7ms)
+  Rendered staffs/edit.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 42ms (Views: 38.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/staffs/1004/edit" for ::1 at 2016-09-06 20:45:07 -0400
+Processing by StaffsController#edit as HTML
+  Parameters: {"id"=>"1004"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 1004], ["LIMIT", 1]]
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (2.8ms)
+  Rendered staffs/edit.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 44ms (Views: 40.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/staffs/1004/edit" for ::1 at 2016-09-06 20:45:18 -0400
+Processing by StaffsController#edit as HTML
+  Parameters: {"id"=>"1004"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 1004], ["LIMIT", 1]]
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (2.3ms)
+  Rendered staffs/edit.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 50ms (Views: 46.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/staffs/1004/edit" for ::1 at 2016-09-06 20:45:34 -0400
+Processing by StaffsController#edit as HTML
+  Parameters: {"id"=>"1004"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 1004], ["LIMIT", 1]]
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (2.4ms)
+  Rendered staffs/edit.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 45ms (Views: 41.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/staffs/1004/edit" for ::1 at 2016-09-06 20:46:19 -0400
+Processing by StaffsController#edit as HTML
+  Parameters: {"id"=>"1004"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 1004], ["LIMIT", 1]]
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (2.7ms)
+  Rendered staffs/edit.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 37ms (Views: 33.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/report" for 127.0.0.1 at 2016-09-07 02:14:21 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ReportController#index as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering report/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "kudos"."sender" AS kudos_sender FROM "kudos" GROUP BY "kudos"."sender"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, staffs.email AS staffs_email FROM "kudos" INNER JOIN "staffs" ON "staffs"."id" = "kudos"."staff_id" GROUP BY staffs.email[0m
+  Rendered report/index.html.erb within layouts/application (35.6ms)
+Completed 200 OK in 365ms (Views: 318.7ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-09-07 02:14:35 -0400
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/_pager.html.erb (0.2ms)
+  Rendered staffs/_pager.html.erb (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 81ms (Views: 76.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-07 02:14:37 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "an@innotac.com"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "an@innotac.com"], ["LIMIT", 1]]
+  [1m[36mKudo Load (0.5ms)[0m  [1m[34mSELECT  "kudos".* FROM "kudos" ORDER BY "kudos"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.5ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 6002]]
+  Rendered kudos/_kudoNoRecipient.html.erb (10.9ms)
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6004], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6004], ["LIMIT", 1]]
+  Rendered collection of kudos/_kudo.html.erb [5 times] (9.2ms)
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."sender" = $1[0m  [["sender", "an@innotac.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6004], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6004], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6004], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6004], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6004], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6003], ["LIMIT", 1]]
+  Rendered kudos/_kudoNoSender.html.erb (24.7ms)
+  Rendered dashboard/index.html.erb within layouts/application (65.8ms)
+Completed 200 OK in 167ms (Views: 135.2ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/staffs/6002/edit" for 127.0.0.1 at 2016-09-07 02:14:42 -0400
+Processing by StaffsController#edit as HTML
+  Parameters: {"id"=>"6002"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.7ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6002], ["LIMIT", 1]]
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (450.1ms)
+  Rendered staffs/edit.html.erb within layouts/application (451.9ms)
+Completed 200 OK in 503ms (Views: 495.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/staffs/new" for 127.0.0.1 at 2016-09-07 02:14:48 -0400
+Processing by StaffsController#new as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering staffs/new.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (2.1ms)
+  Rendered staffs/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 55ms (Views: 50.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/staffs/6002/edit" for 127.0.0.1 at 2016-09-07 02:14:53 -0400
+Processing by StaffsController#edit as HTML
+  Parameters: {"id"=>"6002"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 6002], ["LIMIT", 1]]
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (3.4ms)
+  Rendered staffs/edit.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 56ms (Views: 52.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-09-07 02:15:00 -0400
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/_pager.html.erb (0.2ms)
+  Rendered staffs/_pager.html.erb (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 50ms (Views: 47.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/staffs.json?keywords=er&page=0" for 127.0.0.1 at 2016-09-07 02:15:04 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"er", "page"=>"0"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.9ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'er%' OR lower(last_name) like 'er%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 8ms (Views: 3.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/staffs/5458/erstaff" for 127.0.0.1 at 2016-09-07 02:15:07 -0400
+Processing by StaffsController#erstaff as HTML
+  Parameters: {"id"=>"5458"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 5458], ["LIMIT", 1]]
+  Rendering staffs/erstaff.html.erb within layouts/application
+  Rendered staffs/_curstaff.html.erb (0.6ms)
+  Rendered staffs/erstaff.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 49ms (Views: 44.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/staffs/5458/edit" for 127.0.0.1 at 2016-09-07 02:15:11 -0400
+Processing by StaffsController#edit as HTML
+  Parameters: {"id"=>"5458"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.6ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 5458], ["LIMIT", 1]]
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (2.9ms)
+  Rendered staffs/edit.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 51ms (Views: 46.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-09-07 02:15:13 -0400
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/_pager.html.erb (0.2ms)
+  Rendered staffs/_pager.html.erb (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 45ms (Views: 42.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/report" for 127.0.0.1 at 2016-09-07 02:15:14 -0400
+Processing by ReportController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering report/index.html.erb within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "kudos"."sender" AS kudos_sender FROM "kudos" GROUP BY "kudos"."sender"[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, staffs.email AS staffs_email FROM "kudos" INNER JOIN "staffs" ON "staffs"."id" = "kudos"."staff_id" GROUP BY staffs.email[0m
+  Rendered report/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 49ms (Views: 44.1ms | ActiveRecord: 2.4ms)
+
+
