@@ -1,10 +1,14 @@
+
 body.loggedin {
+
+      background: #f9f9f9 url(image_path('body_bg.png')) repeat-x;
   ul.nav.navbar-nav {
     display: block
   }
   .section {
     border: 1px solid #c6e7f3;
     padding:20px 50px;
+    background: #fff;
   }
 }
 body.home {
