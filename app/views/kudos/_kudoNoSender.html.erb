@@ -1,7 +1,8 @@
 <% kudos.each do |kudo| %>
     <li class="list-group-item clearfix">
+    <% if policy(:kudo).destroy? %>
       <%= render partial: "kudos/kudoDelete", locals: {kudo: kudo} %>
-
+    <% end %>
       <h3 class="list-group-item-heading">
         <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
         <%= kudo.staff.first_name %> <%= kudo.staff.last_name %>
