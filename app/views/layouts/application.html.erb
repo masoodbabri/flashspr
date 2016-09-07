@@ -47,7 +47,7 @@
               </a>
               <ul class="dropdown-menu">
                 <li>
-                  <%= link_to_if($curUserStaff.nil?, 'Ignore', root_path) do %>
+                  <%= link_to_if($curUserStaff.nil?, 'Edit Profile', root_path) do %>
                       <%= link_to 'Edit Profile', edit_staff_path($curUserStaff) %>
                   <% end %>
                 </li>
@@ -63,7 +63,7 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li> <%= link_to "New Staff", new_staff_path, class: "" %> </li>
-                  <li> <%= link_to "Edit/Remove Staff", staffs_path, class: "" %>  </li>
+                  <li> <%= link_to "View/Edit/Remove Staff", staffs_path, class: "" %>  </li>
                 </ul>
               </li>
             <% end %>
