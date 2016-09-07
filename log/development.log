@@ -2517,3 +2517,470 @@ Completed 200 OK in 35ms (Views: 33.6ms | ActiveRecord: 0.0ms)
 >>>>>>> add forms styles
 
 
+Started GET "/" for ::1 at 2016-09-07 08:20:16 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (2.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (1.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "admin@innotac.com"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "admin@innotac.com"], ["LIMIT", 1]]
+  [1m[36mKudo Load (1.0ms)[0m  [1m[34mSELECT  "kudos".* FROM "kudos" ORDER BY "kudos"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mStaff Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "admin@innotac.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.4ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1007]]
+  Rendered kudos/_kudoNoRecipient.html.erb (3.5ms)
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[36mStaff Load (1.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 869], ["LIMIT", 1]]
+  Rendered collection of kudos/_kudo.html.erb [3 times] (26.2ms)
+  [1m[36mKudo Load (0.7ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."sender" = $1[0m  [["sender", "admin@innotac.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 869], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  Rendered kudos/_kudoNoSender.html.erb (5.3ms)
+  Rendered dashboard/index.html.erb within layouts/application (55.2ms)
+Started GET "/" for ::1 at 2016-09-07 08:20:17 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (21.1ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "admin@innotac.com"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "admin@innotac.com"], ["LIMIT", 1]]
+  [1m[36mKudo Load (24.9ms)[0m  [1m[34mSELECT  "kudos".* FROM "kudos" ORDER BY "kudos"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mStaff Exists (4.3ms)[0m  [1m[34mSELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "admin@innotac.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (2.9ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1007]]
+  Rendered kudos/_kudoNoRecipient.html.erb (4.2ms)
+  [1m[36mStaff Load (3.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  [1m[36mStaff Load (29.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[36mStaff Load (3.8ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 869], ["LIMIT", 1]]
+  Rendered collection of kudos/_kudo.html.erb [3 times] (45.6ms)
+  [1m[36mKudo Load (3.4ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."sender" = $1[0m  [["sender", "admin@innotac.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 869], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  Rendered kudos/_kudoNoSender.html.erb (11.4ms)
+  Rendered dashboard/index.html.erb within layouts/application (70.9ms)
+Completed 200 OK in 5791ms (Views: 5686.9ms | ActiveRecord: 93.9ms)
+
+
+Completed 200 OK in 6724ms (Views: 6626.0ms | ActiveRecord: 23.1ms)
+
+
+Started GET "/" for ::1 at 2016-09-07 08:20:31 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.7ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "admin@innotac.com"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "admin@innotac.com"], ["LIMIT", 1]]
+  [1m[36mKudo Load (0.5ms)[0m  [1m[34mSELECT  "kudos".* FROM "kudos" ORDER BY "kudos"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mStaff Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "admin@innotac.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.5ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1007]]
+  Rendered kudos/_kudoNoRecipient.html.erb (1.5ms)
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 869], ["LIMIT", 1]]
+  Rendered collection of kudos/_kudo.html.erb [3 times] (4.2ms)
+  [1m[36mKudo Load (0.4ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."sender" = $1[0m  [["sender", "admin@innotac.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 869], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  Rendered kudos/_kudoNoSender.html.erb (4.2ms)
+  Rendered dashboard/index.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 101ms (Views: 90.1ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/staffs/new" for ::1 at 2016-09-07 08:21:01 -0400
+Processing by StaffsController#new as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering staffs/new.html.erb within layouts/application
+  Rendered staffs/_form.html.erb (458.0ms)
+  Rendered staffs/new.html.erb within layouts/application (460.4ms)
+Completed 200 OK in 521ms (Views: 513.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/staffs" for ::1 at 2016-09-07 08:21:09 -0400
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/_pager.html.erb (0.4ms)
+  Rendered staffs/_pager.html.erb (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 59ms (Views: 54.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/staffs.json?keywords=gi&page=0" for ::1 at 2016-09-07 08:21:13 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"gi", "page"=>"0"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (2.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'gi%' OR lower(last_name) like 'gi%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 13ms (Views: 4.8ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/staffs/173/sndkudo" for ::1 at 2016-09-07 08:21:16 -0400
+Processing by StaffsController#sndkudo as HTML
+  Parameters: {"id"=>"173"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.9ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 173], ["LIMIT", 1]]
+  Rendering staffs/sndkudo.html.erb within layouts/application
+  Rendered staffs/_curstaff.html.erb (0.8ms)
+  Rendered kudos/_form.html.erb (3.8ms)
+  Rendered staffs/sndkudo.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 84ms (Views: 75.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/staffs/173/sndkudo" for ::1 at 2016-09-07 08:24:30 -0400
+Processing by StaffsController#sndkudo as HTML
+  Parameters: {"id"=>"173"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 173], ["LIMIT", 1]]
+  Rendering staffs/sndkudo.html.erb within layouts/application
+  Rendered staffs/_curstaff.html.erb (0.7ms)
+  Rendered kudos/_form.html.erb (18.1ms)
+  Rendered staffs/sndkudo.html.erb within layouts/application (21.9ms)
+Completed 500 Internal Server Error in 268ms (ActiveRecord: 8.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `staff' for #<#<Class:0x007fe65b0f6420>:0x007fe65b0f5200>
+Did you mean?  @staff):
+    56:                 </li>
+    57:               </ul>
+    58:             </li>
+    59:             <% if policy(staff).admin_options? %>
+    60:               <li>
+    61:                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+    62:                   <span class="glyphicon glyphicon-th-list"></span> Admin <span class="caret"></span>
+  
+app/views/layouts/application.html.erb:59:in `_app_views_layouts_application_html_erb__3096817616130841567_70313673745900'
+  Rendering /Users/jaybates/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/jaybates/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jaybates/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.6ms)
+  Rendering /Users/jaybates/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jaybates/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /Users/jaybates/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jaybates/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/jaybates/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (71.4ms)
+Started GET "/staffs/173/sndkudo" for ::1 at 2016-09-07 08:24:44 -0400
+Processing by StaffsController#sndkudo as HTML
+  Parameters: {"id"=>"173"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 173], ["LIMIT", 1]]
+  Rendering staffs/sndkudo.html.erb within layouts/application
+  Rendered staffs/_curstaff.html.erb (0.5ms)
+  Rendered kudos/_form.html.erb (2.4ms)
+  Rendered staffs/sndkudo.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 50ms (Views: 45.2ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2016-09-07 08:24:49 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"dX23nwKm21CbP5UQo66TaIg+G57FSSPzdc1p7zbMbKPrUdoijQfcN9Ovj/Jbz49J7Cn5aA4EA5C+q9EWhEwR8Q=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2016-09-07 08:24:49 -0400
+Processing by DashboardController#index as HTML
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-09-07 08:24:49 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.4ms)
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `admin?' for nil:NilClass):
+    56:                 </li>
+    57:               </ul>
+    58:             </li>
+    59:             <% if policy(:staff).admin_options? %>
+    60:               <li>
+    61:                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+    62:                   <span class="glyphicon glyphicon-th-list"></span> Admin <span class="caret"></span>
+  
+app/policies/staff_policy.rb:38:in `admin_options?'
+app/views/layouts/application.html.erb:59:in `_app_views_layouts_application_html_erb__3096817616130841567_70313906408920'
+  Rendering /Users/jaybates/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/jaybates/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jaybates/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering /Users/jaybates/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jaybates/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /Users/jaybates/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jaybates/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/jaybates/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (67.7ms)
+Started DELETE "/users/sign_out" for ::1 at 2016-09-07 08:27:06 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"dX23nwKm21CbP5UQo66TaIg+G57FSSPzdc1p7zbMbKPrUdoijQfcN9Ovj/Jbz49J7Cn5aA4EA5C+q9EWhEwR8Q=="}
+Redirected to http://localhost:3000/
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-09-07 08:27:06 -0400
+Processing by DashboardController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-09-07 08:27:06 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `admin?' for nil:NilClass):
+    56:                 </li>
+    57:               </ul>
+    58:             </li>
+    59:             <% if policy(:staff).admin_options? %>
+    60:               <li>
+    61:                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+    62:                   <span class="glyphicon glyphicon-th-list"></span> Admin <span class="caret"></span>
+  
+app/policies/staff_policy.rb:38:in `admin_options?'
+app/views/layouts/application.html.erb:59:in `_app_views_layouts_application_html_erb__3096817616130841567_70313876365020'
+  Rendering /Users/jaybates/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/jaybates/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jaybates/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering /Users/jaybates/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jaybates/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /Users/jaybates/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jaybates/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/jaybates/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (67.5ms)
+Started POST "/__web_console/repl_sessions/31bbf05121d19a01704ec8299b6443c5/trace" for ::1 at 2016-09-07 08:27:11 -0400
+Started POST "/__web_console/repl_sessions/31bbf05121d19a01704ec8299b6443c5/trace" for ::1 at 2016-09-07 08:27:13 -0400
+Started POST "/__web_console/repl_sessions/31bbf05121d19a01704ec8299b6443c5/trace" for ::1 at 2016-09-07 08:27:18 -0400
+Started POST "/__web_console/repl_sessions/31bbf05121d19a01704ec8299b6443c5/trace" for ::1 at 2016-09-07 08:27:21 -0400
+Started GET "/users/sign_in" for ::1 at 2016-09-07 08:31:21 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 53ms (Views: 52.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-09-07 08:32:15 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 66ms (Views: 65.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-09-07 08:32:35 -0400
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XlObm3ba6BtcABV3ISbGB3bHAC1KRGtwZXWM68wqztV64mPQoAr86oqR+sZiJIqjuGAyJbet/t2f6VvsU1hpkw==", "user"=>{"email"=>"jonathan@yahoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jonathan@yahoo.com"], ["LIMIT", 1]]
+  [1m[35mSQL (2.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "jonathan@yahoo.com"], ["encrypted_password", "$2a$11$aseAxxOrjnEqFONjBV7ChOcnSJH5LNRHqux90zkxs9dPXPL3KwYDO"], ["created_at", 2016-09-07 12:32:35 UTC], ["updated_at", 2016-09-07 12:32:35 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", 2016-09-07 12:32:35 UTC], ["last_sign_in_at", 2016-09-07 12:32:35 UTC], ["current_sign_in_ip", "::1/128"], ["last_sign_in_ip", "::1/128"], ["updated_at", 2016-09-07 12:32:35 UTC], ["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 183ms (ActiveRecord: 5.1ms)
+
+
+Started GET "/" for ::1 at 2016-09-07 08:32:35 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "jonathan@yahoo.com"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "jonathan@yahoo.com"], ["LIMIT", 1]]
+  [1m[36mKudo Load (0.4ms)[0m  [1m[34mSELECT  "kudos".* FROM "kudos" ORDER BY "kudos"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mStaff Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "jonathan@yahoo.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.5ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1006]]
+  Rendered kudos/_kudoNoRecipient.html.erb (3.4ms)
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 869], ["LIMIT", 1]]
+  Rendered collection of kudos/_kudo.html.erb [3 times] (5.0ms)
+  [1m[36mKudo Load (0.3ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."sender" = $1[0m  [["sender", "jonathan@yahoo.com"]]
+  Rendered kudos/_kudoNoSender.html.erb (1.4ms)
+  Rendered dashboard/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 98ms (Views: 87.7ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/staffs" for ::1 at 2016-09-07 08:32:45 -0400
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/_pager.html.erb (0.3ms)
+  Rendered staffs/_pager.html.erb (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 52ms (Views: 47.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/staffs.json?keywords=de&page=0" for ::1 at 2016-09-07 08:32:47 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"de", "page"=>"0"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStaff Load (1.1ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'de%' OR lower(last_name) like 'de%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 8ms (Views: 3.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/staffs/54/erstaff" for ::1 at 2016-09-07 08:33:08 -0400
+Processing by StaffsController#erstaff as HTML
+  Parameters: {"id"=>"54"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 54], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2016-09-07 08:33:08 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "jonathan@yahoo.com"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "jonathan@yahoo.com"], ["LIMIT", 1]]
+  [1m[36mKudo Load (1.0ms)[0m  [1m[34mSELECT  "kudos".* FROM "kudos" ORDER BY "kudos"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mStaff Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "jonathan@yahoo.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.5ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1006]]
+  Rendered kudos/_kudoNoRecipient.html.erb (2.3ms)
+  [1m[36mStaff Load (1.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.7ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.6ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 869], ["LIMIT", 1]]
+  Rendered collection of kudos/_kudo.html.erb [3 times] (10.9ms)
+  [1m[36mKudo Load (0.5ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."sender" = $1[0m  [["sender", "jonathan@yahoo.com"]]
+  Rendered kudos/_kudoNoSender.html.erb (2.6ms)
+  Rendered dashboard/index.html.erb within layouts/application (23.2ms)
+Completed 200 OK in 92ms (Views: 77.1ms | ActiveRecord: 6.2ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2016-09-07 08:33:22 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FFGgNThIealwbfk+FeNIuTS9Wi/J/NGxGt1IeUV063sw4Fh+7phtWKb8Fo9W4QQd+hpoJzQVRBzgQZ9+2gZMPQ=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2016-09-07 08:33:22 -0400
+Processing by DashboardController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-09-07 08:33:22 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 53ms (Views: 51.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-09-07 08:33:25 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 55ms (Views: 54.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-09-07 08:33:44 -0400
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iqQ/YrlqjiK/gihVu4OijVwLzSZcXwtwsWOGEVzkC2ndSgAdZ5D0/FxiHZFDflYL9rtid6my0y3uzX4/s1D5dQ==", "user"=>{"email"=>"Echo@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "echo@hotmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "echo@hotmail.com"], ["encrypted_password", "$2a$11$pluZyEah0e8UqApQGM2kLuAjFYebjvGny.GTtRnkXhDwWJ9RL4RXG"], ["created_at", 2016-09-07 12:33:44 UTC], ["updated_at", 2016-09-07 12:33:44 UTC]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", 2016-09-07 12:33:44 UTC], ["last_sign_in_at", 2016-09-07 12:33:44 UTC], ["current_sign_in_ip", "::1/128"], ["last_sign_in_ip", "::1/128"], ["updated_at", 2016-09-07 12:33:44 UTC], ["id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 160ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/" for ::1 at 2016-09-07 08:33:44 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "echo@hotmail.com"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "echo@hotmail.com"], ["LIMIT", 1]]
+  [1m[36mKudo Load (0.5ms)[0m  [1m[34mSELECT  "kudos".* FROM "kudos" ORDER BY "kudos"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 6ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-09-07 08:33:44 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 48ms (Views: 46.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-09-07 08:34:28 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vJC740X8505933jVHaD9JaBaXbGMvMyj+Pm9PknP+zHrfoScmwadkJ4/TRHlXQmjCury4HlRFP6nV0UQpnsJLQ==", "user"=>{"email"=>"admin@innotac.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "admin@innotac.com"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "sign_in_count" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["current_sign_in_at", 2016-09-07 12:34:28 UTC], ["sign_in_count", 2], ["updated_at", 2016-09-07 12:34:28 UTC], ["id", 1]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 164ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/" for ::1 at 2016-09-07 08:34:28 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "admin@innotac.com"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "admin@innotac.com"], ["LIMIT", 1]]
+  [1m[36mKudo Load (0.4ms)[0m  [1m[34mSELECT  "kudos".* FROM "kudos" ORDER BY "kudos"."id" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mStaff Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "admin@innotac.com"], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mKudo Load (0.5ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."staff_id" = $1[0m  [["staff_id", 1007]]
+  Rendered kudos/_kudoNoRecipient.html.erb (1.5ms)
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 869], ["LIMIT", 1]]
+  Rendered collection of kudos/_kudo.html.erb [3 times] (5.3ms)
+  [1m[36mKudo Load (0.4ms)[0m  [1m[34mSELECT "kudos".* FROM "kudos" WHERE "kudos"."sender" = $1[0m  [["sender", "admin@innotac.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 869], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  Rendered kudos/_kudoNoSender.html.erb (4.9ms)
+  Rendered dashboard/index.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 67ms (Views: 58.1ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/staffs" for ::1 at 2016-09-07 08:34:38 -0400
+Processing by StaffsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering staffs/index.html.erb within layouts/application
+  Rendered staffs/_pager.html.erb (0.2ms)
+  Rendered staffs/_pager.html.erb (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 50ms (Views: 46.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/staffs.json?keywords=co&page=0" for ::1 at 2016-09-07 08:34:41 -0400
+Processing by StaffsController#index as JSON
+  Parameters: {"keywords"=>"co", "page"=>"0"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (1.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE (lower(first_name) like 'co%' OR lower(last_name) like 'co%') ORDER BY last_name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+Completed 200 OK in 7ms (Views: 3.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/staffs/92/sndkudo" for ::1 at 2016-09-07 08:34:43 -0400
+Processing by StaffsController#sndkudo as HTML
+  Parameters: {"id"=>"92"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 92], ["LIMIT", 1]]
+  Rendering staffs/sndkudo.html.erb within layouts/application
+  Rendered staffs/_curstaff.html.erb (1.0ms)
+  Rendered kudos/_form.html.erb (2.7ms)
+  Rendered staffs/sndkudo.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 74ms (Views: 69.6ms | ActiveRecord: 0.8ms)
+
+

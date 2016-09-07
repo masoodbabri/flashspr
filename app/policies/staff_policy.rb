@@ -31,6 +31,10 @@ class StaffPolicy
   end
 
   def login_process?
-    @current_user.email == @staff.email
+    Staff.exists?(email: @current_user.email)
+  end
+
+  def admin_options?
+    @current_user.admin?
   end
 end
