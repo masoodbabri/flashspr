@@ -1,3 +1,3 @@
 class Award < ApplicationRecord
-	has_many :kudos
+	# has_many :kudos
 end

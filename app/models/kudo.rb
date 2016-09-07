@@ -1,4 +1,4 @@
 class Kudo < ApplicationRecord
   belongs_to :staff
-  belongs_to :award
+  # belongs_to :award
 end
