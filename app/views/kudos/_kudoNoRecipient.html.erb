@@ -1,13 +1,13 @@
 <% kudos.each do |kudo| %>
-    <li class="list-group-item clearfix">
-      <h3 class="list-group-item-heading">
+    <li class="list-group-item ">
+      <h3 class="list-group-item-heading pull-left">
         <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
         <%= Staff.find_by_email(kudo.sender).first_name %> <%= Staff.find_by_email(kudo.sender).last_name %>
       </h3>
-
+      <p class="pull-left">
       <strong><small class="text-uppercase">Sender:</small></strong>
       <%= kudo.sender %>
-
+       </p>
       <%= render partial: "kudos/kudoMessage", locals: {kudo: kudo} %>
 
     </li>
