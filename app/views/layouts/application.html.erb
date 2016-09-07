@@ -43,11 +43,11 @@
 
   
             <li><%= link_to staffs_path do %>
-                  <span class="glyphicon glyphicon-star"></span>Send/View Kudos
+                  <span class="glyphicon glyphicon-ok"></span>Send/View Kudos
                 <% end %>
             </li>
             <!-- change link-->   <li><%= link_to staffs_path do %>
-                  <span class="glyphicon glyphicon-star"></span> Kudos Report
+                  <span class="glyphicon glyphicon-stats"></span> Kudos Report
                 <% end %>
             </li>
                       <li> <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -59,6 +59,10 @@
                       <%= link_to_if($curUserStaff.nil?, 'Ignore', root_path) do %>
                         <%= link_to 'Edit Profile', edit_staff_path($curUserStaff) %>
                       <% end %>
+                      </li>
+                      <li><a href="#">
+                        Change Password
+                        </a>
                       </li>
                 </ul>
                  
@@ -76,7 +80,7 @@
                 </ul>
             </li>
             <li><%= link_to destroy_user_session_path, method: :delete do %>
-                  <span class="glyphicon glyphicon-star"></span>Logout
+                  <span class="glyphicon glyphicon-export"></span>Logout
               <% end %>
             </li>
 
@@ -92,11 +96,13 @@
 
       <% if notice.present? %>
           <aside class="alert alert-info">
+           <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <%= notice %>
           </aside>
       <% end %>
       <% if alert.present? %>
           <aside class="alert alert-danger">
+           <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <%= alert %>
           </aside>
       <% end %>
