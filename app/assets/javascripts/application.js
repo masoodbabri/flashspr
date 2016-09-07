@@ -16,4 +16,5 @@
 //= require angular-route
 //= require highcharts
 //= require chartkick
+//= require bootstrap-sass-official
 //= require_tree .

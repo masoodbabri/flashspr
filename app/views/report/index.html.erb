@@ -4,3 +4,4 @@
 
 <h1>Kudos by Receiver</h1>
 <%= pie_chart @allKudos.joins(:staff).group('staffs.email').count %>
+
