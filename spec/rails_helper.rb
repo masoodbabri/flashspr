@@ -19,6 +19,8 @@ require 'rspec/rails'
 require 'factory_girl_rails'
 require 'faker'
 require 'pundit/rspec'
+require 'devise'
+require 'support/controllers_helper'
 
 
 # Add additional requires below this line. Rails is not loaded until this point!
@@ -43,6 +45,9 @@ require 'pundit/rspec'
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
+  config.include Devise::Test::ControllerHelpers, :type => :controller
+  config.include ControllerHelpers, :type => :controller
+
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
