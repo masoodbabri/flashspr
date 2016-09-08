@@ -238,3 +238,11 @@ footer {
 .well {
   margin-top: 4px;
 }
+.badges {
+     background-image: url(image_path('badges_horizontal.gif')) ;
+     background-repeat: no-repeat;
+        float: right;
+    width: 521px;
+    height: 71px;
+    background-size: 70%;
+}
