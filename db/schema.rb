@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160908171318) do
+ActiveRecord::Schema.define(version: 20160908184101) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20160908171318) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "body"
-    t.integer  "activity"
+    t.integer  "kudo_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -54,9 +54,11 @@ ActiveRecord::Schema.define(version: 20160908171318) do
     t.string   "sender"
     t.text     "message"
     t.integer  "staff_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.integer  "awards_id"
+    t.integer  "author_id"
+    t.integer  "category_id"
     t.index ["awards_id"], name: "index_kudos_on_awards_id", using: :btree
     t.index ["staff_id"], name: "index_kudos_on_staff_id", using: :btree
   end
@@ -69,6 +71,7 @@ ActiveRecord::Schema.define(version: 20160908171318) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "points"
+    t.boolean  "active"
     t.index "lower((email)::text)", name: "staffs_lower_email", using: :btree
     t.index "lower((first_name)::text) varchar_pattern_ops", name: "staffs_lower_first_name", using: :btree
     t.index "lower((last_name)::text) varchar_pattern_ops", name: "staffs_lower_last_name", using: :btree

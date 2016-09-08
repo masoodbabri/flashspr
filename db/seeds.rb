@@ -5,7 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+ %w(Teamwork Improvement Delivery Experiment).each do |category|
+   Category.create(name: category)
+ end
 
+{"Ankle Buster":  10, "Riptide": 25, "Breaker": 50, "Cruncher": 100, "Tidal Wave": 200, "Big Surf": 400}.each do |key, value|
+   Badge.create(name: key.to_s, point_level: value)
+end
 
 
 1_000.times do |i|
