@@ -42,7 +42,7 @@ Rails.application.configure do
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
 
- config.action_mailer.default_url_options = { host: "www.innotac.com" }
+ config.action_mailer.default_url_options = { host: "ec2-52-44-117-61.compute-1.amazonaws.com" }
  # Delivery method is set up as smtp
  config.action_mailer.delivery_method = :smtp
  # We want application to send emails
