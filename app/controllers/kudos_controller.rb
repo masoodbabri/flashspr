@@ -18,7 +18,7 @@ class KudosController < ApplicationController
         sender: current_user.email,
         message: kudo_params[:message])
 
-    redirect_to staff_path(@staff)
+    redirect_to root_path
   end
 
   def destroy
