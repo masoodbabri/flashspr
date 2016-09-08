@@ -33,7 +33,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
 gem 'bower-rails'
-gem 'faker'
 gem 'rest-client'
 gem 'pundit'
 gem 'chartkick'
@@ -69,7 +68,9 @@ group :dev do
 end
 
 group :test do
-
+  gem 'faker', '~> 1.6'
+  gem 'factory_girl_rails', '~> 4.5'
+  gem 'simplecov-rcov', '~> 0.2.3', require: false
 end
 
 group :preprod do
