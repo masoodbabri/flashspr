@@ -27,12 +27,27 @@ Rails.application.configure do
 
   # Disable request forgery protection in test environment.
   config.action_controller.allow_forgery_protection = false
-  config.action_mailer.perform_caching = false
 
-  # Tell Action Mailer not to deliver emails to the real world.
-  # The :test delivery method accumulates sent emails in the
-  # ActionMailer::Base.deliveries array.
-  config.action_mailer.delivery_method = :test
+  
+  config.action_mailer.default_url_options = { host: "www.innotac.com" }
+  # Delivery method is set up as smtp
+  config.action_mailer.delivery_method = :smtp
+  # We want application to send emails
+  config.action_mailer.perform_deliveries = true
+  # Setting false for the delivery of emails
+  config.action_mailer.raise_delivery_errors = false
+  # Setting up the character set for the mailer
+  config.action_mailer.default charset: "utf-8"
+  # smtp setting for the mailer
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: "mail.google.com",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: "innotac.flash",
+    password: "FlashRus2016"
+  }
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr

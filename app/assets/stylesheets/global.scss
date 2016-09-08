@@ -20,13 +20,16 @@ body.home {
     background-color: #eee;
     border-color: #eee ;
         overflow-x: hidden;
+        box-shadow:none !important;
 
     .logo li {
       background-size: 100%;
       padding: 46px 93px 39px 22px;
       margin-left: 47px;
     }
-
+    .navbar-toggle {
+      display: none !important; 
+    }
 
   }
 

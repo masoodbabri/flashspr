@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>FlashSPR</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>Props</title>
   <%= csrf_meta_tags %>
 
   <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -31,14 +33,15 @@
           <ul class="nav navbar-nav">
             <li><a href="/" > <span class="glyphicon glyphicon-home"></span>Home</a></li>
 
-            <li>
-              <%= link_to staffs_path do %>
-                  <span class="glyphicon glyphicon-ok"></span>Send/View Kudos
-              <% end %>
-            </li>
+        
             <li>
               <%= link_to report_index_path do %>
-                <span class="glyphicon glyphicon-stats"></span> Kudos Report
+                <span class="glyphicon glyphicon-stats"></span> Dashboard
+              <% end %>
+            </li>
+               <li>
+              <%= link_to report_index_path do %>
+                <span class="glyphicon glyphicon-book"></span> FAQ
               <% end %>
             </li>
             <li>
