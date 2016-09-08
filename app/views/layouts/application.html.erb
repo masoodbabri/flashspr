@@ -40,9 +40,9 @@
               <% end %>
             </li>
                <li>
-              <%= link_to report_index_path do %>
-                <span class="glyphicon glyphicon-book"></span> FAQ
-              <% end %>
+             <a href="#" data-toggle="modal" data-target="#myModal">
+                <span class="glyphicon glyphicon-book"></span> FAQ/ Help
+            </a>
             </li>
             <li>
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -81,7 +81,53 @@
       </div>
     </nav>
   </header>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Props FAQ’s</h4>
+      </div>
+      <div class="modal-body">
 
+<p>Here is a walk through for how to use the Props Application. Our goal with this application is for you to have fun giving points and getting points!</p>
+<p><strong>Sign Up </strong></p>
+<p>In order to Sign Up for the Props Application, you will need to enter your Email address as well as your password and password re-entry for verification of accuracy.</p>
+<p><strong>Sign In</strong></p>
+<p>Your sign in will require your Email address as well as your password. You can select remember me in order to save that information for easier and faster access later.</p>
+<p>Once signed in, you will go directly to the Give Kudos Page</p>
+<p>To give a Kudos, you are able to search by First Name, Last Name, and Email Address</p>
+<p>There is an options to select if you forgot your password which will send you password reset instructions.</p>
+<p><strong>Give Kudos</strong></p>
+<p>As you enter the member&rsquo;s name, the Props applicaiton will autopopulate under the search with the members names, details and there is a button to Send Kudos</p>
+<p><strong>Send a Kudo:</strong></p>
+<p>When you send your Kudo, you are able to include a personalized message to the user, however this is not required. You do need to select a category for your kudo via the dropdown, this is required. The options are Teamwork, Improvement, Delivery, and Experiment.</p>
+<p><strong>Kudos Procedures and Badge Categories:</strong></p>
+<p><strong>Each Kudo = 1 Point</strong></p>
+<p><strong>***&nbsp;&nbsp; You can give 1 Kudo per Day</strong></p>
+<p>There are various badge categories that you can earn by earning more kudos.</p>
+<p>The badge levels are listed below from highest to lowest:</p>
+<p><strong>Big Surf:</strong> 400 points</p>
+<p><strong>Tidal Wave:</strong> 200 points</p>
+<p><strong>Cruncher:</strong> 100 points</p>
+<p><strong>Breaker:</strong> 50 points</p>
+<p><strong>Riptide:</strong> 25 points</p>
+<p><strong>Ankle Buster:</strong> 10 points</p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>MVP Dashboard</strong></p>
+<p>The dashboard will enable you to view and search the kudos given.</p>
+<p>The initial graph will show the total amount of kudos given with the highest number being at the top of the graph and the lowest number at the bottom.</p>
+<p>You will be able to select a specific category of kudos given by the drop down and that will update your graph to show the highest to lowest recipients for each category.</p>
+<p>For further assistance, please email <a href="mailto:help@DHSprops.gov">help@DHSprops.gov</a></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
   <div class="section">
     <% if notice.present? %>
         <aside class="alert alert-info">
