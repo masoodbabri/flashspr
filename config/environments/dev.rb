@@ -26,10 +26,25 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
-  # Don't care if the mailer can't send.
+  config.action_mailer.default_url_options = { host: "www.innotac.com" }
+  # Delivery method is set up as smtp
+  config.action_mailer.delivery_method = :smtp
+  # We want application to send emails
+  config.action_mailer.perform_deliveries = true
+  # Setting false for the delivery of emails
   config.action_mailer.raise_delivery_errors = false
-
-  config.action_mailer.perform_caching = false
+  # Setting up the character set for the mailer
+  config.action_mailer.default charset: "utf-8"
+  # smtp setting for the mailer
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: "mail.google.com",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: "innotac.flash",
+    password: "FlashRus2016"
+  }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

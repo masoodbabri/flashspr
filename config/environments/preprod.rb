@@ -55,7 +55,25 @@ Rails.application.configure do
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "flashSPR_#{Rails.env}"
-  config.action_mailer.perform_caching = false
+  config.action_mailer.default_url_options = { host: "www.innotac.com" }
+  # Delivery method is set up as smtp
+  config.action_mailer.delivery_method = :smtp
+  # We want application to send emails
+  config.action_mailer.perform_deliveries = true
+  # Setting false for the delivery of emails
+  config.action_mailer.raise_delivery_errors = false
+  # Setting up the character set for the mailer
+  config.action_mailer.default charset: "utf-8"
+  # smtp setting for the mailer
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: "mail.google.com",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: "innotac.flash",
+    password: "FlashRus2016"
+  }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
