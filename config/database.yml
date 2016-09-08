@@ -125,7 +125,6 @@ preprod:
   database: flashSPR_preprod
   username: flashSPR
   #password: <%= ENV['FLASHSPR_DATABASE_PASSWORD'] %>
-  username: flashSPR
   password: ne14PreprodSPR
   host: flashspr-preprod.csuqvhktfazj.us-east-1.rds.amazonaws.com
 
@@ -135,6 +134,5 @@ production:
   database: flashSPR_prod
   username: flashSPR
   #password: <%= ENV['FLASHSPR_DATABASE_PASSWORD'] %>
-  username: flashSPR
   password: ne14ProdSPR
   host: flashspr-prod.csuqvhktfazj.us-east-1.rds.amazonaws.com
