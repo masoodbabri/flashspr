@@ -56,3 +56,33 @@
   </section>
 </article>
 <p></p>
+<section>
+
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#mykudos">My Kudos</a></li>
+    <li><a data-toggle="tab" href="#reckudos">Recent Kudos</a></li>
+    <li><a data-toggle="tab" href="#sntkudos">Sent Kudos</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="mykudos" class="tab-pane fade in active">
+      <h2><%= @staff.first_name %> <%= @staff.last_name %>'s Kudos</h2>
+      <ol class="list-group">
+        <%= render partial: "kudos/kudoNoRecipient", locals: {kudos: @staff.kudos} %>
+      </ol>
+    </div>
+    <div id="reckudos" class="tab-pane fade">
+      <h2>Recent Kudos</h2>
+      <ol class="list-group">
+        <%= render @last10Kudos %>
+      </ol>
+    </div>
+    <div id="sntkudos" class="tab-pane fade">
+      <h2>Kudos Sent by Me</h2>
+      <ol class="list-group">
+        <%= render partial: "kudos/kudoNoSender", locals: {kudos: @sentKudos} %>
+      </ol>
+    </div>
+
+  </div>
+</section>
