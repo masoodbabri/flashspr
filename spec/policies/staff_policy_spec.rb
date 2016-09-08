@@ -7,7 +7,7 @@ describe StaffPolicy do
   let(:staff_record) { FactoryGirl.build(:staff) }
 
   permissions :erstaff?, :destroy?, :admin_options? do
-  it 'grants access to admin' do
+    it 'grants access to admin' do
       expect(subject).to permit(admin)
     end
 
