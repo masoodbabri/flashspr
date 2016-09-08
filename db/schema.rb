@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160908171057) do
+=======
+ActiveRecord::Schema.define(version: 20160908171318) do
+>>>>>>> 20625526dd74abe9fb3b5076fd69aac5e34e1e84
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,6 +72,7 @@ ActiveRecord::Schema.define(version: 20160908171057) do
     t.string   "email",      null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "points"
     t.index "lower((email)::text)", name: "staffs_lower_email", using: :btree
     t.index "lower((first_name)::text) varchar_pattern_ops", name: "staffs_lower_first_name", using: :btree
     t.index "lower((last_name)::text) varchar_pattern_ops", name: "staffs_lower_last_name", using: :btree
