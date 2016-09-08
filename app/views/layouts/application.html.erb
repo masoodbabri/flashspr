@@ -3,7 +3,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <title>FlashSPR</title>
+  <title>Props</title>
   <%= csrf_meta_tags %>
 
   <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -35,12 +35,17 @@
 
             <li>
               <%= link_to staffs_path do %>
-                  <span class="glyphicon glyphicon-ok"></span>Send/View Kudos
+                  <span class="glyphicon glyphicon-ok"></span> Give/View Kudos
               <% end %>
             </li>
             <li>
               <%= link_to report_index_path do %>
-                <span class="glyphicon glyphicon-stats"></span> Kudos Report
+                <span class="glyphicon glyphicon-stats"></span> Dashboard
+              <% end %>
+            </li>
+               <li>
+              <%= link_to report_index_path do %>
+                <span class="glyphicon glyphicon-stats"></span> FAQ
               <% end %>
             </li>
             <li>
