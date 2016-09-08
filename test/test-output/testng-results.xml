@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="8562" started-at="2016-09-08T04:50:01Z" finished-at="2016-09-08T04:50:09Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="8562" started-at="2016-09-08T04:50:01Z" finished-at="2016-09-08T04:50:09Z">
+      <class name="tests.regTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:tests.regTest@6d78f375]" name="setUp" is-config="true" duration-ms="2160" started-at="2016-09-08T00:50:01Z" finished-at="2016-09-08T00:50:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="regression()[pri:0, instance:tests.regTest@6d78f375]" name="regression" duration-ms="6393" started-at="2016-09-08T00:50:03Z" finished-at="2016-09-08T00:50:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- regression -->
+      </class> <!-- tests.regTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
