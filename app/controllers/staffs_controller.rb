@@ -35,9 +35,16 @@ class StaffsController < ApplicationController
     @staff = Staff.find(params[:id])
   end
 
+  # FIXME: this method should be using show
   def sndkudo
     @staff = Staff.find(params[:id])
     @category = Category.all
+  end
+
+  # FIXME: this method should be using show
+  def erstaff
+    @staff = Staff.find(params[:id])
+    authorize @staff
   end
 
   def new
@@ -54,11 +61,6 @@ class StaffsController < ApplicationController
     else
       render 'new'
     end
-  end
-
-  def erstaff
-    @staff = Staff.find(params[:id])
-    authorize @staff
   end
 
   def edit

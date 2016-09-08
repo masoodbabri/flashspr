@@ -1,11 +1,4 @@
-class StaffPolicy
-  attr_reader :current_user, :staff
-
-  def initialize(current_user, model)
-  	@current_user = current_user
-  	@staff = model
-  end
-
+class StaffPolicy < ApplicationPolicy
   def create?
     @current_user.admin? || @current_user.user?
   end
@@ -19,11 +12,11 @@ class StaffPolicy
   end
 
   def edit?
-    @current_user.admin? || (@current_user.email == @staff.email)
+    @current_user.admin? || @current_user.email.eql?(record.try(:email))
   end
 
   def update?
-    @current_user.admin? || (@current_user.email == @staff.email)
+    @current_user.admin? || @current_user.email.eql?(record.try(:email))
   end
 
   def destroy?
