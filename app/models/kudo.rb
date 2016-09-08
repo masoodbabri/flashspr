@@ -5,7 +5,7 @@ class Kudo < ApplicationRecord
   belongs_to :category
   belongs_to :author, class_name: 'Staff', foreign_key: :author_id
 
-  after_commit :create_coment, on: :create
+  after_create :create_comment
 
   def message=(msg)
     @msg = msg
@@ -13,10 +13,6 @@ class Kudo < ApplicationRecord
 
   def message
     self.comment.try(:body)
-  end
-
-  def sender
-    author.email
   end
 
   def staff_id
@@ -27,7 +23,7 @@ class Kudo < ApplicationRecord
 
   def create_comment
     p "after create"
-    p msg
-    self.comments.create(body: @msg) unless msg.blank?
+    p @msg
+    self.comment.create(body: @msg) unless msg.blank?
   end
 end

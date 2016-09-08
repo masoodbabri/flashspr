@@ -14,10 +14,11 @@ class KudosController < ApplicationController
 
   def create
     @staff = Staff.find(params[:staff_id])
-    @staff.kudos.create(sender: current_user.email,
+    @staff.kudos.create!(sender: current_user.email,
                         staff_id: params[:staff_id],
                         message: kudo_params[:message],
-                        category_id: kudo_params[:category_id])
+                        category_id: kudo_params[:category_id],
+                        author_id: current_user.id)
 
     redirect_to root_path
   end
