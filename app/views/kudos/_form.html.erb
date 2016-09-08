@@ -1,8 +1,9 @@
 <%= form_for([@staff, @staff.kudos.build]) do |f| %>
     <p>
-      <%= f.label :Message, class: 'col-sm-2 control-label' %><br>
-      <%= f.text_area :message, class: 'form-control'%>
+      <%= f.label :Message, class: 'col-sm-2 control-label' %> <div class="pull-right"><%= f.select :category_id, options_for_select(@category.collect{ |c| [c.name, c.id] }) %></div><br>
+      <%= f.text_area :message, class: 'form-control'%> 
     </p>
+
     <p>
       <%= f.submit 'submit', class: 'btn btn-primary btn-sm'%>
     </p>

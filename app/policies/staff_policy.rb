@@ -7,7 +7,7 @@ class StaffPolicy
   end
 
   def create?
-    @current_user.admin?
+    @current_user.admin? || @current_user.user?
   end
 
   def erstaff?
@@ -15,7 +15,7 @@ class StaffPolicy
   end
 
   def new?
-    @current_user.admin?
+    @current_user.admin? || @current_user.user?
   end
 
   def edit?

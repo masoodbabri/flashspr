@@ -7,23 +7,24 @@ class Kudo < ApplicationRecord
 
   after_create :create_comment
 
-  def message=(msg)
-    @msg = msg
-  end
+  # def message=(msg)
+  #   @msg = msg
+  # end
 
-  def message
-    self.comment.try(:body)
-  end
+  # def message
+  #   self.comment.try(:body)
+  # end
 
-  def staff_id
-    recipient.id
-  end
+  # def staff_id
+  #   recipient.id
+  # end
 
   private
 
   def create_comment
     p "after create"
     p @msg
-    self.comment.create(body: @msg) unless msg.blank?
+    Comment.create(body: @msg) unless @msg.blank?
+    self.staff.update_attributes(points:  self.staff.points.to_i + 1)
   end
 end

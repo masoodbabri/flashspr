@@ -1,0 +1,6 @@
+<% @currstaff = Staff.find_by_email(kudo.sender) %>
+<% if @currstaff.present? %>
+  <%= Staff.find_by_email(kudo.sender).first_name %> <%= Staff.find_by_email(kudo.sender).last_name %>
+<% else %>
+  This staff member no longer exists.
+<% end %>
