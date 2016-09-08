@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20160908171057) do
-=======
-ActiveRecord::Schema.define(version: 20160908171318) do
->>>>>>> 20625526dd74abe9fb3b5076fd69aac5e34e1e84
+ActiveRecord::Schema.define(version: 20160908173905) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,9 +54,11 @@ ActiveRecord::Schema.define(version: 20160908171318) do
     t.string   "sender"
     t.text     "message"
     t.integer  "staff_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.integer  "awards_id"
+    t.integer  "author_id"
+    t.integer  "category_id"
     t.index ["awards_id"], name: "index_kudos_on_awards_id", using: :btree
     t.index ["staff_id"], name: "index_kudos_on_staff_id", using: :btree
   end

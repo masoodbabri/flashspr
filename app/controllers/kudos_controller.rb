@@ -14,9 +14,10 @@ class KudosController < ApplicationController
 
   def create
     @staff = Staff.find(params[:staff_id])
-    @kudo = @staff.kudos.create(
-        sender: current_user.email,
-        message: kudo_params[:message])
+    @staff.kudos.create(sender: current_user.email,
+                        staff_id: params[:staff_id],
+                        message: kudo_params[:message],
+                        category_id: kudo_params[:category_id])
 
     redirect_to staff_path(@staff)
   end
@@ -35,6 +36,6 @@ class KudosController < ApplicationController
   private
 
   def kudo_params
-    params.require(:kudo).permit(:sender, :message)
+    params.require(:kudo).permit(:sender, :message, :category_id)
   end
 end
