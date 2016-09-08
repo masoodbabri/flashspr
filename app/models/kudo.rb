@@ -22,8 +22,6 @@ class Kudo < ApplicationRecord
   private
 
   def create_comment
-    p "after create"
-    p @msg
     Comment.create(body: @msg) unless @msg.blank?
     self.staff.update_attributes(points:  self.staff.points.to_i + 1)
   end
