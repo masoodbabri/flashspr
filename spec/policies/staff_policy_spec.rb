@@ -6,13 +6,23 @@ describe StaffPolicy do
   let(:admin) { FactoryGirl.build(:admin) }
   let(:staff_record) { FactoryGirl.build(:staff) }
 
-  permissions :create?, :erstaff?, :new?, :destroy?, :admin_options? do
-    it 'grants access to admin' do
+  permissions :erstaff?, :destroy?, :admin_options? do
+  it 'grants access to admin' do
       expect(subject).to permit(admin)
     end
 
     it 'denies access to user' do
       expect(subject).not_to permit(user)
+    end
+  end
+
+  permissions :new?, :create? do
+    it 'grants access to admin' do
+      expect(subject).to permit(admin)
+    end
+
+    it 'grants access to user' do
+      expect(subject).to permit(user)
     end
   end
 
@@ -61,15 +71,4 @@ describe StaffPolicy do
       end
     end
   end
-    # def edit?
-  #   @current_user.admin? || (@current_user.email == @staff.email)
-  # end
-  #
-  # def update?
-  #   @current_user.admin? || (@current_user.email == @staff.email)
-  # end
-  #
-  # def login_process?
-  #   Staff.exists?(email: @current_user.email)
-  # end
 end
