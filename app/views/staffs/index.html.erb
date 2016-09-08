@@ -1,7 +1,11 @@
 <article ng-app="staffs" ng-controller="StaffSearchController">
   <header>
-    <h1 class="h2">Give a Point</h1>
+    <h1 class="h2">Give a Kudos</h1>
   </header>
+  <div class="panel panel-default">
+  <div class="panel-body">
+   
+
   <section class="search-form">
     <form>
       <label for="search.keywords" class="sr-only">Keywords</label>
@@ -21,9 +25,9 @@
     <header>
       <h1 class="h3">Results</h1>
     </header>
-    <%= render partial: "pager",
+   <!--  <%= render partial: "pager",
                locals: { keywords: @keywords, page: @page } %>
-
+ -->
     <ol class="list-group">
       <li class="list-group-item clearfix"
           ng-repeat="staff in staffs">
@@ -51,8 +55,41 @@
 
       </li>
     </ol>
-    <%= render partial: "pager",
-               locals: { keywords: @keywords, page: @page } %>
+   <!--  <%= render partial: "pager",
+               locals: { keywords: @keywords, page: @page } %> -->
   </section>
+    </div>
+</div>
 </article>
 <p></p>
+<section>
+
+  <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="#reckudos">Recent Kudos</a></li>
+    <li ><a data-toggle="tab" href="#mykudos">My Kudos</a></li>
+    <li><a data-toggle="tab" href="#sntkudos">Sent Kudos</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="reckudos" class="tab-pane fade in active">
+      <h2>Recent Kudos</h2>
+      <ol class="list-group">
+        <%= render @last10Kudos %>
+      </ol>
+    </div>
+    <div id="mykudos" class="tab-pane fade ">
+      <h2><%= @staff.first_name %> <%= @staff.last_name %>'s Kudos</h2>
+      <ol class="list-group">
+        <%= render partial: "kudos/kudoNoRecipient", locals: {kudos: @staff.kudos} %>
+      </ol>
+    </div>
+  
+    <div id="sntkudos" class="tab-pane fade">
+      <h2>Kudos Sent by Me</h2>
+      <ol class="list-group">
+        <%= render partial: "kudos/kudoNoSender", locals: {kudos: @sentKudos} %>
+      </ol>
+    </div>
+
+  </div>
+</section>
