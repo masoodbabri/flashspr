@@ -29,6 +29,7 @@ class StaffsController < ApplicationController
 
   def sndkudo
     @staff = Staff.find(params[:id])
+    @activities = Activity.all
   end
 
   def new
