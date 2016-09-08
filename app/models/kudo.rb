@@ -22,8 +22,7 @@ class Kudo < ApplicationRecord
   private
 
   def create_comment
-    p "after create"
-    p @msg
-    self.comment.create(body: @msg) unless msg.blank?
+    Comment.create(body: @msg) unless @msg.blank?
+
   end
 end

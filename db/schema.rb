@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160908183211) do
+ActiveRecord::Schema.define(version: 20160908184101) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 20160908183211) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "points"
+    t.boolean  "active"
     t.index "lower((email)::text)", name: "staffs_lower_email", using: :btree
     t.index "lower((first_name)::text) varchar_pattern_ops", name: "staffs_lower_first_name", using: :btree
     t.index "lower((last_name)::text) varchar_pattern_ops", name: "staffs_lower_last_name", using: :btree
