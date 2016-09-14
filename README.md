@@ -79,3 +79,4 @@ Capified
 * https://www.digitalocean.com/community/tutorials/how-to-configure-the-nginx-web-server-on-a-virtual-private-server
 * http://stackoverflow.com/questions/17413526/nginx-missing-sites-available-directory
 * http://ruby-journal.com/how-to-setup-rails-app-with-puma-and-nginx/
+#flashspr
